@@ -1,10 +1,10 @@
 {
   "product": [
     {
-      "name": "wer",
-      "description": "f",
-      "price": null,
-      "picture": "dsfds",
+      "name": "alo",
+      "description": "Barberton Daisy",
+      "price": 12432,
+      "picture": "https://i.pinimg.com/564x/f2/43/66/f243661a5e6cea37a8c5834af688bee9.jpg",
       "id": 1
     },
     {
@@ -22,9 +22,6 @@
       "id": 3
     },
     {
-      "id": 4
-    },
-    {
       "name": "sd",
       "description": "",
       "price": 0,
@@ -38,34 +35,6 @@
       "picture": "",
       "": "dfg",
       "id": 6
-    },
-    {
-      "name": "dfa",
-      "description": "asdf",
-      "price": null,
-      "picture": "adsf",
-      "id": 7
-    },
-    {
-      "name": "sdaf",
-      "description": "afd",
-      "price": null,
-      "picture": "adf",
-      "id": 8
-    },
-    {
-      "name": "sdaf",
-      "description": "afd",
-      "price": null,
-      "picture": "adf",
-      "id": 9
-    },
-    {
-      "name": "sdaf",
-      "description": "afd",
-      "price": null,
-      "picture": "adf",
-      "id": 10
     }
   ]
 }

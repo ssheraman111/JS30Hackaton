@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useContext, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { API } from "../helpers/consts";
 export const productContext = createContext();
@@ -7,7 +8,7 @@ export const productContext = createContext();
 export const useProducts = () => {
   return useContext(productContext);
 };
-const INIT_STATE = { products: [], productsDetails: {} };
+const INIT_STATE = { products: [], productDetails: {} };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
@@ -23,6 +24,7 @@ const reducer = (state = INIT_STATE, action) => {
 };
 
 const ProductContextProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   console.log(state);
   //!READ start
@@ -39,11 +41,34 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
   // ! create (post request)
+  // !delete
+  const deleteProduct = async (id) => {
+    await axios.delete(`${API}/${id}`);
+    getProducts();
+  };
+
+  // !delete
+  //! get product details
+  const getProductDetails = async (id) => {
+    const { data } = await axios.get(`${API}/${id}`);
+    dispatch({ type: "GET_PRODUCT_DETAILS", payload: data });
+  };
+
+  //! saveChanges (patch request)
+
+  const saveEditedProduct = async (editedProduct) => {
+    await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
+    getProducts();
+  };
 
   const values = {
     getProducts,
     addProduct,
     products: state.products,
+    deleteProduct,
+    getProductDetails,
+    productDetails: state.productDetails,
+    saveEditedProduct,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

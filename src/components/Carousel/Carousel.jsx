@@ -1,3 +1,6 @@
+import littleFlower from "../../images/littleFlower.svg";
+import Flower from "../../images/Flower.svg";
+
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +13,8 @@ import "./Carousel.css";
 
 // import required modules
 import { Pagination } from "swiper";
+import { Box } from "@mui/system";
+import { Button } from "@mui/material";
 
 export default function Carousel() {
   return (
@@ -22,15 +27,68 @@ export default function Carousel() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+          <Box>
+            <p>Welcome to GreenShop</p>
+            <h1>
+              Let’s Make a Better <span>Planet</span>
+            </h1>
+            <p>
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants. Use our plants to create an unique Urban Jungle.
+              Order your favorite plants!
+            </p>
+            <div>
+              <Button variant="contained">SHOP NOW</Button>
+            </div>
+          </Box>
+          <Box>
+            <img src={littleFlower} alt="" />
+            <img src={Flower} alt="" />
+          </Box>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <Box>
+            <p>Welcome to GreenShop</p>
+            <h1>
+              Let’s Make a Better <span>Planet</span>
+            </h1>
+            <p>
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants. Use our plants to create an unique Urban Jungle.
+              Order your favorite plants!
+            </p>
+            <div>
+              <Button variant="contained">SHOP NOW</Button>
+            </div>
+          </Box>
+          <Box>
+            <img src={littleFlower} alt="" />
+            <img src={Flower} alt="" />
+          </Box>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <Box>
+            <p>Welcome to GreenShop</p>
+            <h1>
+              Let’s Make a Better <span>Planet</span>
+            </h1>
+            <p>
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants. Use our plants to create an unique Urban Jungle.
+              Order your favorite plants!
+            </p>
+            <div>
+              <Button variant="contained">SHOP NOW</Button>
+            </div>
+          </Box>
+          <Box>
+            <img src={littleFlower} alt="" />
+            <img src={Flower} alt="" />
+          </Box>
+        </SwiperSlide>
       </Swiper>
     </>
   );

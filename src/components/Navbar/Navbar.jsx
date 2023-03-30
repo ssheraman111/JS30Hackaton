@@ -21,9 +21,7 @@ import { Link } from "react-router-dom";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
-  { name: "Shop", link: "/shop", id: 2 },
   { name: "Plant Care", link: "/plantcare", id: 3 },
-  { name: "Blogs", link: "/blogs", id: 4 },
   { name: "Admin", link: "/admin", id: 5 },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -51,7 +49,7 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={IconOfNavbar} alt="" />
+          <img src={IconOfNavbar} alt="Error" />
           <Typography
             variant="h6"
             noWrap
@@ -98,22 +96,7 @@ function Navbar() {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
-            >
-              {pages.map((page, index) => (
-                <Link key={index} to={page.link}>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </MenuItem>
-                </Link>
-              ))}
-              {pages.map((page, index) => (
-                <Link key={index} to={page.link}>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </MenuItem>
-                </Link>
-              ))}
-            </Menu>
+            ></Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
