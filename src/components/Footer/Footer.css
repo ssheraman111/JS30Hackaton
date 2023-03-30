@@ -1,13 +1,24 @@
+* {
+  font-family: "PT Sans", sans-serif;
+}
 .footerContainer {
+  margin: 73px 6%;
   border: 1px solid black;
 }
 .HeadFooter {
   display: flex;
   justify-content: space-around;
+  height: 205px;
+  background-color: FBFBFB;
+  padding-bottom: 116px;
+  padding-top: 39px;
 }
 .BodyFooter {
   display: flex;
   justify-content: space-around;
+  background-color: rgb(227, 251, 189);
+  padding-bottom: 36px;
+  padding-top: 36px;
 }
 .FootFooter {
   display: flex;
@@ -16,4 +27,23 @@
 .FooterBottom {
   display: flex;
   justify-content: center;
+}
+.Left {
+  display: flex;
+  justify-content: space-around;
+  max-width: 74%;
+}
+.Left2 {
+  display: flex;
+  justify-content: space-around;
+  max-width: 74%;
+  width: 60%;
+}
+.Right {
+  max-width: 20%;
+  font-family: "PT Sans", sans-serif;
+  text-decoration-color: 3D3D3D;
+}
+.HeadFooterColumn {
+  width: 31%;
 }
