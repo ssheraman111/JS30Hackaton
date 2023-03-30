@@ -51,7 +51,7 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={IconOfNavbar} alt="" />
+          <img src={IconOfNavbar} alt="Error" />
           <Typography
             variant="h6"
             noWrap
