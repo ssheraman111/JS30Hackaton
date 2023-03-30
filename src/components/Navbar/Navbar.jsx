@@ -24,6 +24,7 @@ const pages = [
   { name: "Shop", link: "/shop", id: 2 },
   { name: "Plant Care", link: "/plantcare", id: 3 },
   { name: "Blogs", link: "/blogs", id: 4 },
+  { name: "Admin", link: "/admin", id: 5 },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -98,6 +99,13 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
+              {pages.map((page, index) => (
+                <Link key={index} to={page.link}>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </MenuItem>
+                </Link>
+              ))}
               {pages.map((page, index) => (
                 <Link key={index} to={page.link}>
                   <MenuItem onClick={handleCloseNavMenu}>
