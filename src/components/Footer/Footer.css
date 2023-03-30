@@ -1,0 +1,19 @@
+.footerContainer {
+  border: 1px solid black;
+}
+.HeadFooter {
+  display: flex;
+  justify-content: space-around;
+}
+.BodyFooter {
+  display: flex;
+  justify-content: space-around;
+}
+.FootFooter {
+  display: flex;
+  justify-content: space-around;
+}
+.FooterBottom {
+  display: flex;
+  justify-content: center;
+}
