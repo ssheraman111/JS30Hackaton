@@ -23,25 +23,25 @@ const AddProduct = () => {
           sx={{ width: "60%" }}
           id="standard-basic"
           label="Name"
-          variant="name"
+          name="name"
         />
         <TextField
           sx={{ width: "60%" }}
           id="standard-basic"
           label="Price"
-          variant="price"
+          name="price"
         />
         <TextField
           sx={{ width: "60%" }}
           id="standard-basic"
           label="Picture"
-          variant="picture"
+          name="picture"
         />
         <TextField
           sx={{ width: "60%" }}
           id="standard-basic"
           label="Description"
-          variant="description"
+          name="description"
         />
 
         <Button sx={{ width: "40%" }} variant="outlined">
