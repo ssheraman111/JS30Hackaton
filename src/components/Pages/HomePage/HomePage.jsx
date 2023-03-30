@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../../Carousel/Carousel";
+import CarouselDetails from "../../Carousel/CarouselDetails";
 import ProductPage from "../ProductPage/ProductPage";
 
 const HomePage = () => {
