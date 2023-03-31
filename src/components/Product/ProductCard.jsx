@@ -31,7 +31,7 @@ export default function ProductCard({ item }) {
             <IconButton>
               <FavoriteBorderIcon />
             </IconButton>
-            <IconButton>
+            <IconButton onClick={() => navigate(`/details/${item.id}`)}>
               <SearchIcon />
             </IconButton>
             <IconButton>
