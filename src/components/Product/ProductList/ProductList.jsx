@@ -25,7 +25,7 @@ const ProductList = () => {
   };
 
   //Skol'ko stranits
-  const itemsPerPage = 2;
+  const itemsPerPage = 9;
   const count = Math.ceil(products.length / itemsPerPage);
 
   const currentData = () => {
@@ -42,28 +42,26 @@ const ProductList = () => {
     <>
       <div>
         <Box id="list_card">
-          {currentData().map((item) => (
-            <ProductCard item={item} key={item.id} />
-          ))}
+          <div className="containerCards">
+            {currentData().map((item) => (
+              <ProductCard item={item} key={item.id} />
+            ))}
+          </div>
         </Box>
-        <Stack spacing={2}>
-          <Pagination
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "60px",
-            }}
-            count={count}
-            variant="outlined"
-            shape="rounded"
-            onChange={handleChange}
-          />
-        </Stack>
       </div>
-
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Typography id="product_list_title">Блог</Typography>
-      </Box>
+      <Stack spacing={2}>
+        <Pagination
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "60px",
+          }}
+          count={count}
+          variant="outlined"
+          shape="rounded"
+          onChange={handleChange}
+        />
+      </Stack>
     </>
   );
 };

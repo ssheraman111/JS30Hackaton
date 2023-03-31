@@ -1,0 +1,10 @@
+.cardImg {
+  max-height: 265px;
+  object-fit: cover;
+}
+.price {
+  color: rgb(52, 158, 52);
+}
+.name {
+  color: rgb(61, 61, 61);
+}

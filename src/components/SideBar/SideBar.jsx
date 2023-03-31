@@ -13,19 +13,26 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
+import {
+  FormControlLabel,
+  FormLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 import picSideBar from "../../images/SuperSaleBanner.svg";
+import ProductList from "../Product/ProductList/ProductList";
 const drawerWidth = 240;
 
 export default function SideBar() {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Grid sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
         sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
       ></AppBar>
-      <Drawer
+      <Box
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -113,11 +120,12 @@ export default function SideBar() {
           </RadioGroup>
         </List>
         <img src={picSideBar} />
-      </Drawer>
+      </Box>
       <Box
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
       ></Box>
-    </Box>
+      <ProductList />
+    </Grid>
   );
 }

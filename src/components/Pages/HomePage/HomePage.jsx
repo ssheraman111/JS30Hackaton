@@ -9,7 +9,7 @@ const HomePage = () => {
     <div>
       <Carousel />
       <SideBar />
-      <ProductPage />
+      {/* <ProductPage /> */}
     </div>
   );
 };
