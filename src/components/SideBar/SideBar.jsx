@@ -7,16 +7,30 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 
 import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
+import {
+  FormControlLabel,
+  FormLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 
-import { FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
+import ProductList from "../Product/ProductList/ProductList";
+
 import picSideBar from "../../images/SuperSaleBanner.svg";
-import { Grid } from "swiper";
 
 const drawerWidth = 240;
 
 export default function SideBar() {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Grid sx={{ display: "flex" }}>
+      <CssBaseline />
       <AppBar
         sx={{
           width: `calc(100% - ${drawerWidth}px)`,
@@ -115,6 +129,7 @@ export default function SideBar() {
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
       ></Box>
-    </Box>
+      <ProductList />
+    </Grid>
   );
 }
