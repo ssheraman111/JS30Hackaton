@@ -25,7 +25,7 @@ const ProductList = () => {
   };
 
   //Skol'ko stranits
-  const itemsPerPage = 2;
+  const itemsPerPage = 9;
   const count = Math.ceil(products.length / itemsPerPage);
 
   const currentData = () => {
@@ -60,10 +60,6 @@ const ProductList = () => {
           />
         </Stack>
       </div>
-
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Typography id="product_list_title">Блог</Typography>
-      </Box>
     </>
   );
 };
