@@ -10,6 +10,7 @@ const HomePage = () => {
       <Carousel />
       <SideBar />
       <ProductPage />
+      <CarouselDetails />
     </div>
   );
 };
