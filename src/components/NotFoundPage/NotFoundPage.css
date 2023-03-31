@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.wrapper span {
+  font-size: 45px;
+}
