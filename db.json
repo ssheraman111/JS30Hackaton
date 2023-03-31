@@ -54,55 +54,6 @@
       "description": "sagsg",
       "price": 34,
       "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 16
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 17
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 18
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 19
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 20
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 21
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 22
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
       "id": 23
     },
     {
@@ -145,13 +96,6 @@
       "description": "sagsg",
       "price": 34,
       "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 29
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
       "id": 30
     },
     {
@@ -160,13 +104,6 @@
       "price": 34,
       "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
       "id": 31
-    },
-    {
-      "name": "Begonia",
-      "description": "sagsg",
-      "price": 34,
-      "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
-      "id": 32
     }
   ]
 }

@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
+
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -20,8 +20,11 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import picSideBar from "../../images/SuperSaleBanner.svg";
+
 import ProductList from "../Product/ProductList/ProductList";
+
+import picSideBar from "../../images/SuperSaleBanner.svg";
+
 const drawerWidth = 240;
 
 export default function SideBar() {
@@ -29,8 +32,10 @@ export default function SideBar() {
     <Grid sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
-        position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`,
+          ml: `${drawerWidth}px`,
+        }}
       ></AppBar>
       <Box
         sx={{
@@ -42,7 +47,6 @@ export default function SideBar() {
           },
         }}
         variant="permanent"
-        anchor="left"
       >
         <Toolbar />
         <Divider />

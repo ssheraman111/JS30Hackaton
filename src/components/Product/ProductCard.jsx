@@ -9,46 +9,59 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useProducts } from "../../Context/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
-import "./ProductCard.css";
-import pic from "../../images/013.svg";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
+
+  const [mouse, setMouse] = React.useState(false);
+  console.log(mouse);
   const navigate = useNavigate();
   return (
-    <>
-      <div>
-        <img className="cardImg" src={item.picture} alt="" />
-        <p className="name">{item.name}</p>
-        <p className="price">{item.price}$</p>
+    <Card
+      onMouseOver={() => setMouse(true)}
+      onMouseOut={() => setMouse(false)}
+      sx={{ maxWidth: 345 }}
+    >
+      <CardMedia sx={{ height: 140 }} image={item.picture} title="green iguana">
+        {mouse ? (
+          <>
+            <IconButton>
+              <FavoriteBorderIcon />
+            </IconButton>
+            <IconButton onClick={() => navigate(`/details/${item.id}`)}>
+              <SearchIcon />
+            </IconButton>
+            <IconButton>
+              <ShoppingCartIcon />
+            </IconButton>
+          </>
+        ) : (
+          ""
+        )}
+      </CardMedia>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {item.name}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          {item.price}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {item.description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <IconButton onClick={() => deleteProduct(item.id)}>
+          <DeleteIcon />
+        </IconButton>
+        <IconButton onClick={() => navigate(`/edit/${item.id}`)}>
+          <EditIcon />
+        </IconButton>
+      </CardActions>
 
-        <CardActions>
-          <button onClick={() => deleteProduct(item.id)}>
-            <DeleteIcon />
-          </button>
-          <button onClick={() => navigate(`/edit/${item.id}`)}>
-            <EditIcon />
-          </button>
-        </CardActions>
-      </div>
-      {/* 
-      <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image={item.picture}
-          title="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {item.name}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="div">
-            {item.price}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.description}
-          </Typography>
-        </CardContent>
-      </Card> */}
-    </>
+      {/* <h1 onMouseOver={setMouse("true")}>emir</h1> */}
+    </Card>
   );
 }
