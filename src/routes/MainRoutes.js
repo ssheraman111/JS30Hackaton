@@ -10,6 +10,7 @@ const MainRoutes = () => {
     { link: "/", element: <HomePage />, id: 1 },
     { link: "/admin", element: <AdminPage />, id: 2 },
     { link: "/edit/:id", element: <EditPage />, id: 3 },
+    { link: "/edit/:id", element: <EditPage />, id: 3 },
   ];
   return (
     <Routes>

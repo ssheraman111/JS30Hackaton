@@ -3,14 +3,18 @@ import Carousel from "../../Carousel/Carousel";
 import SideBar from "../../SideBar/SideBar";
 import CarouselDetails from "../../Carousel/CarouselDetails";
 import ProductPage from "../ProductPage/ProductPage";
+import Block1 from "../../HomePageBody/Block1";
+import Block2 from "../../HomePageBody/Block2";
 
 const HomePage = () => {
   return (
     <div>
       <Carousel />
-      <SideBar />
+      {/* <SideBar /> */}
+
       <ProductPage />
-      <CarouselDetails />
+      <Block2 />
+      <Block1 />
     </div>
   );
 };
