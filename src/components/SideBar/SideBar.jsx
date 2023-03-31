@@ -10,17 +10,20 @@ import Divider from "@mui/material/Divider";
 
 import { FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 import picSideBar from "../../images/SuperSaleBanner.svg";
+import { Grid } from "swiper";
+
 const drawerWidth = 240;
 
 export default function SideBar() {
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
       <AppBar
-        position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`,
+          ml: `${drawerWidth}px`,
+        }}
       ></AppBar>
-      <Drawer
+      <Box
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -30,7 +33,6 @@ export default function SideBar() {
           },
         }}
         variant="permanent"
-        anchor="left"
       >
         <Toolbar />
         <Divider />
@@ -108,7 +110,7 @@ export default function SideBar() {
           </RadioGroup>
         </List>
         <img src={picSideBar} />
-      </Drawer>
+      </Box>
       <Box
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
