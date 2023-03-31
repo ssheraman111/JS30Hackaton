@@ -17,18 +17,25 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import IconOfNavbar from "../../images/IconOfNavbar.svg";
 import LoginLogoutBtn from "../../images/LoginLogoutBtn.svg";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { ADMIN } from "../../helpers/consts";
+import { Email } from "@mui/icons-material";
+import { useAuth } from "../../AuthContexProvider";
+import { TextField } from "@mui/material";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
-  { name: "Plant Care", link: "/plantcare", id: 3 },
-  { name: "Admin", link: "/admin", id: 5 },
+  { name: "Plant Care", link: "/plantcare", id: 2 },
+  { name: "", link: "/*", id: 3 },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = React.useState(searchParams.get("q") || "");
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -44,6 +51,13 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const navigate = useNavigate();
+
+  const {
+    handleLogout,
+    user: { email },
+  } = useAuth();
 
   return (
     <AppBar position="static">
@@ -128,17 +142,49 @@ function Navbar() {
                 </Button>
               </Link>
             ))}
+            {email === ADMIN ? (
+              <Button
+                onClick={() => navigate("/admin")}
+                sx={{ my: 2, display: "block", color: "white" }}
+              >
+                <Typography id="pages_link">Admin page</Typography>
+              </Button>
+            ) : null}
           </Box>
           <Box>
             <IconButton size="large" aria-label="search" color="inherit">
               <SearchIcon />
+              <TextField
+                id="standard-basic"
+                label="Search"
+                variant="standard"
+                fullWidth
+                onChange={(e) => setSearch(e.target.value)}
+                value={search}
+              />
             </IconButton>
             <IconButton>
               <ShoppingCartIcon />
             </IconButton>
-            <Button variant="contained">
-              <img src={LoginLogoutBtn} alt="" /> Login
-            </Button>
+            {email ? (
+              <Button
+                variant="contained"
+                onClick={handleLogout}
+                sx={{ my: 2, color: "white" }}
+              >
+                <img src={LoginLogoutBtn} alt="" />
+                Logout
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                onClick={() => navigate("/auth")}
+                sx={{ my: 2, color: "white" }}
+              >
+                <img src={LoginLogoutBtn} alt="" />
+                Login
+              </Button>
+            )}
           </Box>
         </Toolbar>
       </Container>

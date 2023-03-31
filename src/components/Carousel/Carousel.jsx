@@ -48,7 +48,6 @@ export default function Carousel() {
           </Box>
         </SwiperSlide>
         <SwiperSlide>
-          {" "}
           <Box>
             <p>Welcome to GreenShop</p>
             <h1>
