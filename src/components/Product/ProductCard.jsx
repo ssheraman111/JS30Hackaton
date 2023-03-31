@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-
 import Typography from "@mui/material/Typography";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -31,7 +30,7 @@ export default function ProductCard({ item }) {
             <IconButton>
               <FavoriteBorderIcon />
             </IconButton>
-            <IconButton>
+            <IconButton onClick={() => navigate(`/details/${item.id}`)}>
               <SearchIcon />
             </IconButton>
             <IconButton>

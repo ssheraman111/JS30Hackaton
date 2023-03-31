@@ -6,15 +6,18 @@ import AdminPage from "./components/Pages/AdminPage/AdminPage";
 import ProductPage from "./components/Pages/ProductPage/ProductPage";
 
 import ProductContextProvider from "./Context/ProductContextProvider";
+import AuthContextProvider from "./AuthContexProvider";
 
 const App = () => {
   return (
-    <ProductContextProvider>
-      <Navbar />
-      <MainRoutes />
+    <AuthContextProvider>
+      <ProductContextProvider>
+        <Navbar />
+        <MainRoutes />
 
-      <Footer />
-    </ProductContextProvider>
+        <Footer />
+      </ProductContextProvider>
+    </AuthContextProvider>
   );
 };
 

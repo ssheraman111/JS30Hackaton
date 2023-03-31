@@ -42,24 +42,26 @@ const ProductList = () => {
     <>
       <div>
         <Box id="list_card">
-          {currentData().map((item) => (
-            <ProductCard item={item} key={item.id} />
-          ))}
+          <div className="containerCards">
+            {currentData().map((item) => (
+              <ProductCard item={item} key={item.id} />
+            ))}
+          </div>
         </Box>
-        <Stack spacing={2}>
-          <Pagination
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "60px",
-            }}
-            count={count}
-            variant="outlined"
-            shape="rounded"
-            onChange={handleChange}
-          />
-        </Stack>
       </div>
+      <Stack spacing={2}>
+        <Pagination
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "60px",
+          }}
+          count={count}
+          variant="outlined"
+          shape="rounded"
+          onChange={handleChange}
+        />
+      </Stack>
     </>
   );
 };

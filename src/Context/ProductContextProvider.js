@@ -8,7 +8,7 @@ export const productContext = createContext();
 export const useProducts = () => {
   return useContext(productContext);
 };
-const INIT_STATE = { products: [], productDetails: {} };
+const INIT_STATE = { products: [], productDetails: {}, randomProducts: [] };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
@@ -41,6 +41,11 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
   // ! create (post request)
+  const getRandomProducts = async () => {
+    const { data } = await axios.get(API + "?_limit=3");
+
+    dispatch({ type: "GET_RANDOM_PRODUCTS", payload: data });
+  };
   // !delete
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
@@ -69,6 +74,8 @@ const ProductContextProvider = ({ children }) => {
     getProductDetails,
     productDetails: state.productDetails,
     saveEditedProduct,
+    getRandomProducts,
+    randomProducts: state.randomProducts,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
