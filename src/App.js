@@ -7,17 +7,20 @@ import ProductPage from "./components/Pages/ProductPage/ProductPage";
 
 import ProductContextProvider from "./Context/ProductContextProvider";
 import AuthContextProvider from "./AuthContexProvider";
+import CartContextProvider from "./Context/CartContextProvider";
 
 const App = () => {
   return (
-    <AuthContextProvider>
-      <ProductContextProvider>
-        <Navbar />
-        <MainRoutes />
+    <CartContextProvider>
+      <AuthContextProvider>
+        <ProductContextProvider>
+          <Navbar />
+          <MainRoutes />
 
-        <Footer />
-      </ProductContextProvider>
-    </AuthContextProvider>
+          <Footer />
+        </ProductContextProvider>
+      </AuthContextProvider>
+    </CartContextProvider>
   );
 };
 

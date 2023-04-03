@@ -9,6 +9,7 @@ import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Auth from "../components/Auth/Auth";
 import { useAuth } from "../AuthContexProvider";
 import { ADMIN } from "../helpers/consts";
+import Cart from "../components/Cart/Cart";
 
 const MainRoutes = () => {
   const { user } = useAuth();
@@ -18,6 +19,7 @@ const MainRoutes = () => {
     { link: "/auth", element: <Auth />, id: 2 },
     { link: "*", element: <NotFoundPage />, id: 3 },
     { link: "/details/:id", element: <DetailsPage />, id: 4 },
+    { link: "/cart", element: <Cart />, id: 5 },
   ];
 
   const PRIVATE_ROUTES = [

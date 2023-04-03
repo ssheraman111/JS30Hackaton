@@ -4,53 +4,31 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import IconOfNavbar from "../../images/IconOfNavbar.svg";
 import LoginLogoutBtn from "../../images/LoginLogoutBtn.svg";
-import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { ADMIN } from "../../helpers/consts";
-import { Email } from "@mui/icons-material";
 import { useAuth } from "../../AuthContexProvider";
 import { TextField } from "@mui/material";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Plant Care", link: "/plantcare", id: 2 },
-  { name: "", link: "/*", id: 3 },
+  { name: "", link: "/*", id: 4 },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = React.useState(searchParams.get("q") || "");
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  React.useEffect(() => {
+    setSearchParams({ q: search });
+  }, [search]);
 
   const navigate = useNavigate();
 
@@ -81,63 +59,10 @@ function Navbar() {
           >
             GREENSHOP
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            ></Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, index) => (
               <Link key={index} to={page.link}>
-                <Button
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
+                <Button sx={{ my: 2, color: "white", display: "block" }}>
                   {page.name}
                 </Button>
               </Link>
@@ -152,7 +77,7 @@ function Navbar() {
             ) : null}
           </Box>
           <Box>
-            <IconButton size="large" aria-label="search" color="inherit">
+            <Button size="large" aria-label="search" color="inherit">
               <SearchIcon />
               <TextField
                 id="standard-basic"
@@ -162,8 +87,8 @@ function Navbar() {
                 onChange={(e) => setSearch(e.target.value)}
                 value={search}
               />
-            </IconButton>
-            <IconButton>
+            </Button>
+            <IconButton onClick={() => navigate("/cart")}>
               <ShoppingCartIcon />
             </IconButton>
             {email ? (

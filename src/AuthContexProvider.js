@@ -83,8 +83,6 @@ const AuthContextProvider = ({ children }) => {
     authListener();
   }, []);
 
-  console.log(user);
-
   const values = {
     email,
     password,

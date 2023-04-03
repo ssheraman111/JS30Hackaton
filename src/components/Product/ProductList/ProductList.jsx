@@ -9,10 +9,11 @@ import "./ProductList.css";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
-  const [searchParams] = useSearchParams();
+  const [searchParam] = useSearchParams();
   useEffect(() => {
     getProducts();
-  }, [searchParams]);
+    console.warn(products);
+  }, [searchParam]);
 
   useEffect(() => {
     getProducts();
@@ -34,9 +35,9 @@ const ProductList = () => {
     return products.slice(begin, end);
   };
 
-  //   useEffect(() => {
-  //     getProducts();
-  //   }, []);
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <>
