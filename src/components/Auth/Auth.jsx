@@ -13,9 +13,12 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../AuthContexProvider";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContexProvider";
 
+import { signInWithPopup } from "firebase/auth";
+import HomePage from "../Pages/HomePage/HomePage";
+import { auth, provider } from "../../Fire";
 function Copyright(props) {
   return (
     <Typography
@@ -36,6 +39,19 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Auth() {
+  // !google
+  const [value, setValue] = React.useState("");
+  const handleClick = () => {
+    signInWithPopup(auth, provider).then((data) => {
+      console.log(data.user);
+      setValue(data.user.email);
+      localStorage.setItem("email", data.user.email);
+    });
+  };
+  React.useEffect(() => {
+    setValue(localStorage.getItem("email"));
+  }, []);
+  // !google
   const {
     email,
     password,
@@ -161,13 +177,22 @@ export default function Auth() {
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
                   >
-                    {"Already have an account? Log In"}
+                    {"Already have an account? "}
                   </Link>
                 )}
               </Grid>
             </Grid>
           </Box>
         </Box>
+
+        {user ? (
+          <Navigate to={"/"} />
+        ) : (
+          <Link variant="body2" onClick={handleClick}>
+            {`Login with Google`}
+          </Link>
+        )}
+
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>

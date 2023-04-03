@@ -10,7 +10,6 @@ const HomePage = () => {
   return (
     <div>
       <Carousel />
-      <SideBar />
 
       <ProductPage />
       <Block2 />

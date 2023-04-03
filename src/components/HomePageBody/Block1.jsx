@@ -53,14 +53,14 @@ export default function Block1() {
               Cacti are succulents are easy care plants for any home or patio.
             </Typography>
           </CardContent>
-          <CardActions>
+          <Box>
             <Button sx={{ color: "black" }} size="small">
               Learn More
-              <IconButton>
-                <EastIcon />
-              </IconButton>
             </Button>
-          </CardActions>
+            <IconButton>
+              <EastIcon />
+            </IconButton>
+          </Box>
         </Card>
         <Card
           sx={{
@@ -91,10 +91,10 @@ export default function Block1() {
           <CardActions>
             <Button sx={{ color: "black" }} size="small">
               Learn More
-              <IconButton>
-                <EastIcon />
-              </IconButton>
             </Button>
+            <IconButton>
+              <EastIcon />
+            </IconButton>
           </CardActions>
         </Card>
         <Card
@@ -126,10 +126,10 @@ export default function Block1() {
           <CardActions>
             <Button sx={{ color: "black" }} size="small">
               Learn More
-              <IconButton>
-                <EastIcon />
-              </IconButton>
             </Button>
+            <IconButton>
+              <EastIcon />
+            </IconButton>
           </CardActions>
         </Card>
         <Card
@@ -161,10 +161,10 @@ export default function Block1() {
           <CardActions>
             <Button sx={{ color: "black" }} size="small">
               Learn More
-              <IconButton>
-                <EastIcon />
-              </IconButton>
             </Button>
+            <IconButton>
+              <EastIcon />
+            </IconButton>
           </CardActions>
         </Card>
       </Box>

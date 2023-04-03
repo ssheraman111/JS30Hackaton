@@ -7,10 +7,9 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
+
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
+
 import AdbIcon from "@mui/icons-material/Adb";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -19,9 +18,9 @@ import IconOfNavbar from "../../images/IconOfNavbar.svg";
 import LoginLogoutBtn from "../../images/LoginLogoutBtn.svg";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { ADMIN } from "../../helpers/consts";
-import { Email } from "@mui/icons-material";
-import { useAuth } from "../../AuthContexProvider";
+
 import { TextField } from "@mui/material";
+import { useAuth } from "../../Context/AuthContexProvider";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -185,6 +184,7 @@ function Navbar() {
                 Login
               </Button>
             )}
+            <h1>{email}</h1>
           </Box>
         </Toolbar>
       </Container>

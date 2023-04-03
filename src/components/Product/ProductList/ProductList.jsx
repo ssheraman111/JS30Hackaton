@@ -39,10 +39,10 @@ const ProductList = () => {
   //   }, []);
 
   return (
-    <>
+    <div className="containerCards">
       <div>
         <Box id="list_card">
-          <div className="containerCards">
+          <div>
             {currentData().map((item) => (
               <ProductCard item={item} key={item.id} />
             ))}
@@ -62,7 +62,7 @@ const ProductList = () => {
           onChange={handleChange}
         />
       </Stack>
-    </>
+    </div>
   );
 };
 

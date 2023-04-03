@@ -7,7 +7,7 @@ import EditPage from "../components/Pages/EditPage/EditPage";
 import HomePage from "../components/Pages/HomePage/HomePage";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Auth from "../components/Auth/Auth";
-import { useAuth } from "../AuthContexProvider";
+import { useAuth } from "../Context/AuthContexProvider";
 import { ADMIN } from "../helpers/consts";
 
 const MainRoutes = () => {

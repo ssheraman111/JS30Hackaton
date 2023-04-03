@@ -129,7 +129,6 @@ export default function SideBar() {
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
       ></Box>
-      <ProductList />
     </Grid>
   );
 }
