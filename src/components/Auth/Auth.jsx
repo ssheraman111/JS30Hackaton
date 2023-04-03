@@ -14,11 +14,13 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuth } from "../../Context/AuthContexProvider";
 
 import { signInWithPopup } from "firebase/auth";
 import HomePage from "../Pages/HomePage/HomePage";
+
+import { useAuth } from "../../Context/AuthContexProvider";
 import { auth, provider } from "../../Fire";
+
 function Copyright(props) {
   return (
     <Typography

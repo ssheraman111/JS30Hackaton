@@ -61,6 +61,7 @@ export default function Cart() {
               <TableCell align="right">{row.item.type}</TableCell>
               <TableCell align="right">{row.item.description}</TableCell>
               <TableCell align="right">{row.item.price}</TableCell>
+
               <TableCell align="right">
                 <input
                   type="number"
