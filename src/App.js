@@ -4,17 +4,22 @@ import MainRoutes from "./routes/MainRoutes";
 import Footer from "./components/Footer/Footer";
 
 import ProductContextProvider from "./Context/ProductContextProvider";
+
+import CartContextProvider from "./Context/CartContextProvider";
 import AuthContextProvider from "./Context/AuthContexProvider";
 
 const App = () => {
   return (
-    <AuthContextProvider>
-      <ProductContextProvider>
-        <Navbar />
-        <MainRoutes />
-        <Footer />
-      </ProductContextProvider>
-    </AuthContextProvider>
+    <CartContextProvider>
+      <AuthContextProvider>
+        <ProductContextProvider>
+          <Navbar />
+          <MainRoutes />
+
+          <Footer />
+        </ProductContextProvider>
+      </AuthContextProvider>
+    </CartContextProvider>
   );
 };
 

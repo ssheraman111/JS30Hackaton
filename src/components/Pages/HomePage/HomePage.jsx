@@ -11,6 +11,8 @@ const HomePage = () => {
     <div>
       <Carousel />
 
+      {/* <SideBar /> */}
+
       <ProductPage />
       <Block2 />
       <Block1 />
