@@ -33,7 +33,6 @@ const AddProduct = () => {
       setProduct(obj);
     }
   };
-  console.log(product);
 
   return (
     <div>

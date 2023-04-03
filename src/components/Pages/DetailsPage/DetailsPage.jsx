@@ -18,7 +18,7 @@ const DetailsPage = () => {
 
     getRandomProducts();
   }, []);
-  console.log(product);
+
   return (
     <Box>
       <Box className="left_block_of_img">

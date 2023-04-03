@@ -36,13 +36,6 @@
       "id": 13
     },
     {
-      "name": "Chinese Evergreen",
-      "description": "jghasfgsdthdsf",
-      "price": 40,
-      "picture": "https://i.pinimg.com/474x/b2/b8/d5/b2b8d51086ffd9062e7d7f6a9cbb80f2.jpg",
-      "id": 14
-    },
-    {
       "name": "Keara",
       "description": "KOjbibasgads",
       "price": 56,
@@ -104,6 +97,13 @@
       "price": 34,
       "picture": "https://i.pinimg.com/564x/f7/7e/1a/f77e1ab73210615bd1fd06538708d641.jpg",
       "id": 31
+    },
+    {
+      "name": "Test",
+      "description": "test",
+      "price": 123,
+      "picture": "https://i.pinimg.com/564x/d5/55/28/d55528d059074b825479de2affedf0f7.jpg",
+      "id": 32
     }
   ]
 }

@@ -12,12 +12,14 @@ import { useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useCart } from "../../Context/CartContextProvider";
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
 
   const [mouse, setMouse] = React.useState(false);
-  console.log(mouse);
+
   const navigate = useNavigate();
+  const { addProductToCart, checkProductInCard } = useCart();
   return (
     <Card
       onMouseOver={() => setMouse(true)}
@@ -33,8 +35,10 @@ export default function ProductCard({ item }) {
             <IconButton onClick={() => navigate(`/details/${item.id}`)}>
               <SearchIcon />
             </IconButton>
-            <IconButton>
-              <ShoppingCartIcon />
+            <IconButton onClick={() => addProductToCart(item)}>
+              <ShoppingCartIcon
+                color={checkProductInCard(item.id) ? "primary" : ""}
+              />
             </IconButton>
           </>
         ) : (

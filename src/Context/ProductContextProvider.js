@@ -26,13 +26,12 @@ const reducer = (state = INIT_STATE, action) => {
 const ProductContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  console.log(state);
+
   //!READ start
   const getProducts = async () => {
     const { data } = await axios.get(API);
 
     dispatch({ type: "GET_PRODUCTS", payload: data });
-    console.log(data);
   };
   //!READ end
   // ! create (post request)
