@@ -1,7 +1,6 @@
 .containerCards {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 48%;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important;
+  width: 90% !important;
 }

@@ -13,8 +13,9 @@ import IconOfNavbar from "../../images/IconOfNavbar.svg";
 import LoginLogoutBtn from "../../images/LoginLogoutBtn.svg";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { ADMIN } from "../../helpers/consts";
-import { useAuth } from "../../AuthContexProvider";
+
 import { TextField } from "@mui/material";
+import { useAuth } from "../../Context/AuthContexProvider";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -110,6 +111,7 @@ function Navbar() {
                 Login
               </Button>
             )}
+            <h1>{email}</h1>
           </Box>
         </Toolbar>
       </Container>

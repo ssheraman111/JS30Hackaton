@@ -9,7 +9,8 @@ import Block2 from "../../HomePageBody/Block2";
 const HomePage = () => {
   return (
     <div>
-      {/* <Carousel /> */}
+      <Carousel />
+
       {/* <SideBar /> */}
 
       <ProductPage />
