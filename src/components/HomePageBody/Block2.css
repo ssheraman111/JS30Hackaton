@@ -1,7 +1,8 @@
 .Block2Container {
   width: 100% !important;
   display: flex !important;
-  justify-content: center;
+  justify-content: center !important;
+  margin-top: 5rem !important;
 }
 
 .Block2Item {

@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import ProductCard from "../ProductCard";
-import {
-  productContext,
-  useProducts,
-} from "../../../Context/ProductContextProvider";
+import { useProducts } from "../../../Context/ProductContextProvider";
 import "./ProductList.css";
-import { useContext } from "react";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
@@ -42,21 +38,15 @@ const ProductList = () => {
   return (
     <div className="containerCards">
       <div>
-        <Box id="list_card">
-          <div>
-            {currentData().map((item) => (
-              <ProductCard item={item} key={item.id} />
-            ))}
-          </div>
+        <Box className="list_card">
+          {currentData().map((item) => (
+            <ProductCard className="flexCard" item={item} key={item.id} />
+          ))}
         </Box>
       </div>
-      <Stack spacing={2}>
+      <Stack className="poginationCard" spacing={2}>
         <Pagination
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "60px",
-          }}
+          className="pogination"
           count={count}
           variant="outlined"
           shape="rounded"

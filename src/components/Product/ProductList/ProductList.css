@@ -1,6 +1,11 @@
-.containerCards {
+.list_card {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: space-evenly !important;
-  width: 90% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 5rem !important;
+}
+
+.pogination {
+  margin: auto !important;
 }

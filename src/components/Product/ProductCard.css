@@ -1,53 +1,98 @@
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .card__container {
   display: flex !important;
+  flex-direction: column !important ;
+  margin: 1rem !important;
+}
+/*  */
+.img__card {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 
-.madia__card {
-  width: 150px !important;
-  height: 150px !important;
+.img__card_icons {
+  position: absolute !important;
+  bottom: 0 !important;
+  z-index: 1000 !important;
+  margin-bottom: 10px !important;
+  background-color: rgba(255, 255, 255, 0.423) !important;
+  padding: 5px !important;
+  border-radius: 5px !important;
 }
+/*  */
 
 .madia__card_img {
+  height: 300px !important;
+  width: 300px !important;
+  border-top-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
   object-fit: cover !important;
 }
 
 .btn__favorite {
+  margin-left: 1rem !important  ;
+}
+.btn__favorite:hover {
+  background-color: #46a359b1 !important;
+  padding: 5px !important;
 }
 
 .btn__search {
+  margin-left: 1rem !important  ;
+}
+.btn__search:hover {
+  background-color: #46a359b1 !important;
+  padding: 5px !important;
 }
 
 .btn__shop {
+  margin-left: 1rem !important  ;
 }
-
-.card__content {
+.btn__shop:hover {
+  background-color: #46a359b1 !important;
+  padding: 5px !important;
 }
 
 .content__name {
+  font-weight: 300 !important;
 }
 
 .content__price {
-}
-
-.content__descr {
-}
-
-.card__action {
-}
-
-.btn__delete {
-}
-
-.btn__edit {
+  font-size: 25px !important;
+  font-weight: 900 !important;
+  color: #46a358 !important;
 }
 
 .cardImg {
-  max-height: 265px;
-  object-fit: cover;
+  max-height: 265px !important;
+  object-fit: cover !important;
 }
 .price {
-  color: rgb(52, 158, 52);
+  color: rgb(52, 158, 52) !important;
+  cursor: pointer !important;
 }
-.name {
-  color: rgb(61, 61, 61);
+
+.forFlex {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.btn__delete {
+  margin-right: 1rem !important;
+}
+.btn__delete:hover {
+  background-color: #46a359b1 !important;
+  padding: 5px !important;
+  margin-right: 1rem !important;
+}
+
+.btn__edit:hover {
+  background-color: #46a359b1 !important;
+  padding: 5px !important;
 }
