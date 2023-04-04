@@ -1,8 +1,4 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -15,6 +11,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCart } from "../../Context/CartContextProvider";
 import { useAuth } from "../../Context/AuthContexProvider";
 import { ADMIN } from "../../helpers/consts";
+import "./ProductCard.css";
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
 
@@ -27,42 +24,39 @@ export default function ProductCard({ item }) {
   } = useAuth();
   return (
     <div className="card__container">
-      <Card
+      <div
+        className="img__card"
         onMouseOver={() => setMouse(true)}
         onMouseOut={() => setMouse(false)}
-        sx={{ maxWidth: 345 }}
       >
-        <CardMedia
-          className="madia__card"
-          sx={{ height: 140 }}
-          image={item.picture}
-          title="green iguana"
-        >
-          {mouse ? (
-            <>
-              <IconButton className="btn__favorite">
-                <FavoriteBorderIcon />
-              </IconButton>
-              <IconButton
-                className="btn__search"
-                onClick={() => navigate(`/details/${item.id}`)}
-              >
-                <SearchIcon />
-              </IconButton>
-              <IconButton
-                className="btn__shop"
-                onClick={() => addProductToCart(item)}
-              >
-                <ShoppingCartIcon
-                  color={checkProductInCard(item.id) ? "primary" : ""}
-                />
-              </IconButton>
-            </>
-          ) : (
-            ""
-          )}
-        </CardMedia>
-        <CardContent className="card__content">
+        <img className="madia__card_img" src={item.picture} alt="" />
+
+        {mouse ? (
+          <div className="img__card_icons">
+            <IconButton className="btn__favorite">
+              <FavoriteBorderIcon />
+            </IconButton>
+            <IconButton
+              className="btn__search"
+              onClick={() => navigate(`/details/${item.id}`)}
+            >
+              <SearchIcon />
+            </IconButton>
+            <IconButton
+              className="btn__shop"
+              onClick={() => addProductToCart(item)}
+            >
+              <ShoppingCartIcon
+                color={checkProductInCard(item.id) ? "primary" : ""}
+              />
+            </IconButton>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="forFlex">
+        <div className="card__content">
           <Typography
             className="content__name"
             gutterBottom
@@ -77,19 +71,12 @@ export default function ProductCard({ item }) {
             variant="h5"
             component="div"
           >
-            {item.price}
+            ${item.price}
           </Typography>
-          <Typography
-            className="content__descr"
-            variant="body2"
-            color="text.secondary"
-          >
-            {item.description}
-          </Typography>
-        </CardContent>
+        </div>
 
         {email === ADMIN ? (
-          <CardActions className="card__action">
+          <div className="card__action">
             <IconButton
               className="btn__delete"
               onClick={() => deleteProduct(item.id)}
@@ -102,11 +89,11 @@ export default function ProductCard({ item }) {
             >
               <EditIcon />
             </IconButton>
-          </CardActions>
+          </div>
         ) : (
           ""
         )}
-      </Card>
+      </div>
     </div>
   );
 }
