@@ -6,7 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Button } from "@mui/material";
+import { Button, Input } from "@mui/material";
 import { useCart } from "../../Context/CartContextProvider";
 
 function createData(name, calories, fat, carbs, protein) {
@@ -40,12 +40,10 @@ export default function Cart() {
           <TableRow>
             <TableCell>Picture</TableCell>
             <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Type</TableCell>
             <TableCell align="right">Description</TableCell>
             <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Count</TableCell>
-            <TableCell align="right">SubPrice</TableCell>
-            <TableCell align="right">-</TableCell>
+
+            <TableCell align="right">Delete from cart</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -58,31 +56,18 @@ export default function Cart() {
                 <img width="100" height="100" src={row.item.picture} alt="" />
               </TableCell>
               <TableCell align="right">{row.item.name}</TableCell>
-              <TableCell align="right">{row.item.type}</TableCell>
               <TableCell align="right">{row.item.description}</TableCell>
-              <TableCell align="right">{row.item.price}</TableCell>
+              <TableCell align="right">${row.item.price}</TableCell>
               <TableCell align="right">
-                <input
-                  type="number"
-                  min={1}
-                  max={100}
-                  value={row.count}
-                  onChange={(e) =>
-                    changeProductCount(e.target.value, row.item.id)
-                  }
-                />
-              </TableCell>
-              <TableCell align="right">{row.subPrice}</TableCell>
-              <TableCell align="right">
-                <button onClick={() => deleteCartProduct(row.item.id)}>
+                <Button onClick={() => deleteCartProduct(row.item.id)}>
                   DELETE
-                </button>
+                </Button>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice}</Button>
+      <Button onClick={cartCleaner}>BUY ${cart?.totalPrice}</Button>
     </TableContainer>
   );
 }

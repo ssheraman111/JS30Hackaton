@@ -26,56 +26,83 @@ export default function ProductCard({ item }) {
     user: { email },
   } = useAuth();
   return (
-    <Card
-      onMouseOver={() => setMouse(true)}
-      onMouseOut={() => setMouse(false)}
-      sx={{ maxWidth: 345 }}
-    >
-      <CardMedia sx={{ height: 140 }} image={item.picture} title="green iguana">
-        {mouse ? (
-          <>
-            <IconButton>
-              <FavoriteBorderIcon />
-            </IconButton>
-            <IconButton onClick={() => navigate(`/details/${item.id}`)}>
-              <SearchIcon />
-            </IconButton>
-            <IconButton onClick={() => addProductToCart(item)}>
-              <ShoppingCartIcon
-                color={checkProductInCard(item.id) ? "primary" : ""}
-              />
-            </IconButton>
-          </>
-        ) : (
-          ""
-        )}
-      </CardMedia>
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {item.name}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          {item.price}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {item.description}
-        </Typography>
-      </CardContent>
 
-      {email === ADMIN ? (
-        <CardActions>
-          <IconButton onClick={() => deleteProduct(item.id)}>
+    <div className="card__container">
+      <Card
+        onMouseOver={() => setMouse(true)}
+        onMouseOut={() => setMouse(false)}
+        sx={{ maxWidth: 345 }}
+      >
+        <CardMedia
+          className="madia__card"
+          sx={{ height: 140 }}
+          image={item.picture}
+          title="green iguana"
+        >
+          {mouse ? (
+            <>
+              <IconButton className="btn__favorite">
+                <FavoriteBorderIcon />
+              </IconButton>
+              <IconButton
+                className="btn__search"
+                onClick={() => navigate(`/details/${item.id}`)}
+              >
+                <SearchIcon />
+              </IconButton>
+              <IconButton
+                className="btn__shop"
+                onClick={() => addProductToCart(item)}
+              >
+                <ShoppingCartIcon
+                  color={checkProductInCard(item.id) ? "primary" : ""}
+                />
+              </IconButton>
+            </>
+          ) : (
+            ""
+          )}
+        </CardMedia>
+        <CardContent className="card__content">
+          <Typography
+            className="content__name"
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
+            {item.name}
+          </Typography>
+          <Typography
+            className="content__price"
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
+            {item.price}
+          </Typography>
+          <Typography
+            className="content__descr"
+            variant="body2"
+            color="text.secondary"
+          >
+            {item.description}
+          </Typography>
+        </CardContent>
+        <CardActions className="card__action">
+          <IconButton
+            className="btn__delete"
+            onClick={() => deleteProduct(item.id)}
+          >
             <DeleteIcon />
           </IconButton>
-          <IconButton onClick={() => navigate(`/edit/${item.id}`)}>
+          <IconButton
+            className="btn__edit"
+            onClick={() => navigate(`/edit/${item.id}`)}
+          >
             <EditIcon />
           </IconButton>
         </CardActions>
-      ) : (
-        ""
-      )}
-
-      {/* <h1 onMouseOver={setMouse("true")}>emir</h1> */}
-    </Card>
+      </Card>
+    </div>
   );
 }

@@ -1,3 +1,40 @@
+.card__container {
+  display: flex !important;
+}
+
+.madia__card {
+}
+
+.btn__favorite {
+}
+
+.btn__search {
+}
+
+.btn__shop {
+}
+
+.card__content {
+}
+
+.content__name {
+}
+
+.content__price {
+}
+
+.content__descr {
+}
+
+.card__action {
+}
+
+.btn__delete {
+}
+
+.btn__edit {
+}
+
 .cardImg {
   max-height: 265px;
   object-fit: cover;
