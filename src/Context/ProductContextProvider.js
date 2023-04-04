@@ -29,7 +29,7 @@ const ProductContextProvider = ({ children }) => {
 
   //!READ start
   const getProducts = async () => {
-    const { data } = await axios.get(API);
+    const { data } = await axios.get(`${API}/${window.location.search}`);
 
     dispatch({ type: "GET_PRODUCTS", payload: data });
   };
@@ -65,6 +65,19 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
 
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+
+    if (value == "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    const url = `${window.location.pathname}?${search.toString()}`;
+
+    navigate(url);
+  };
+
   const values = {
     getProducts,
     addProduct,
@@ -75,6 +88,7 @@ const ProductContextProvider = ({ children }) => {
     saveEditedProduct,
     getRandomProducts,
     randomProducts: state.randomProducts,
+    fetchByParams,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

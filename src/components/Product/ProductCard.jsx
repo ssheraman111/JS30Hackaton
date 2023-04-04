@@ -13,6 +13,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCart } from "../../Context/CartContextProvider";
+import { useAuth } from "../../Context/AuthContexProvider";
+import { ADMIN } from "../../helpers/consts";
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
 
@@ -20,7 +22,11 @@ export default function ProductCard({ item }) {
 
   const navigate = useNavigate();
   const { addProductToCart, checkProductInCard } = useCart();
+  const {
+    user: { email },
+  } = useAuth();
   return (
+
     <div className="card__container">
       <Card
         onMouseOver={() => setMouse(true)}
@@ -96,8 +102,6 @@ export default function ProductCard({ item }) {
             <EditIcon />
           </IconButton>
         </CardActions>
-
-        {/* <h1 onMouseOver={setMouse("true")}>emir</h1> */}
       </Card>
     </div>
   );

@@ -9,11 +9,10 @@ import "./ProductList.css";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
-  const [searchParam] = useSearchParams();
+  const [searchParams] = useSearchParams();
   useEffect(() => {
     getProducts();
-    console.warn(products);
-  }, [searchParam]);
+  }, [searchParams]);
 
   useEffect(() => {
     getProducts();
@@ -34,10 +33,6 @@ const ProductList = () => {
     const end = begin + itemsPerPage;
     return products.slice(begin, end);
   };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   return (
     <div className="containerCards">
