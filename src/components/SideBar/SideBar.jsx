@@ -72,6 +72,7 @@ export default function SideBar() {
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"
+            onChange={(e) => fetchByParams("categories", e.target.value)}
           >
             <FormControlLabel value="All" control={<Radio />} label="All" />
             <FormControlLabel

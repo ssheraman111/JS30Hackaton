@@ -68,7 +68,7 @@ const ProductContextProvider = ({ children }) => {
   const fetchByParams = async (query, value) => {
     const search = new URLSearchParams(window.location.search);
 
-    if (value == "all") {
+    if (value == "All") {
       search.delete(query);
     } else {
       search.set(query, value);

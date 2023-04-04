@@ -71,7 +71,13 @@ const AddProduct = () => {
           label="Description"
           name="description"
         />
-
+        <TextField
+          onChange={handleInp}
+          sx={{ width: "60%" }}
+          id="standard-basic"
+          label="Categories"
+          name="categories"
+        />
         <Button
           onClick={() => {
             addProduct(product);
