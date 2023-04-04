@@ -101,8 +101,6 @@ export default function ProductCard({ item }) {
             <EditIcon />
           </IconButton>
         </CardActions>
-
-        {/* <h1 onMouseOver={setMouse("true")}>emir</h1> */}
       </Card>
     </div>
   );

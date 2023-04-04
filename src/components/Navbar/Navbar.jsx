@@ -125,6 +125,7 @@ function Navbar() {
               </Button>
             )}
           </Box>
+
           {email ? (
             <Box sx={{ flexGrow: 0, marginLeft: "23px" }}>
               <Tooltip title="Open settings">
