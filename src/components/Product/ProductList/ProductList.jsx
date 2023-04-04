@@ -4,11 +4,16 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { Box, Typography } from "@mui/material";
 import ProductCard from "../ProductCard";
-import { useProducts } from "../../../Context/ProductContextProvider";
+import {
+  productContext,
+  useProducts,
+} from "../../../Context/ProductContextProvider";
 import "./ProductList.css";
+import { useContext } from "react";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
+
   const [searchParams] = useSearchParams();
   useEffect(() => {
     getProducts();
