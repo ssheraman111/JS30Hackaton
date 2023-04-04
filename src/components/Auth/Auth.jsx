@@ -43,7 +43,6 @@ export default function Auth() {
   const [value, setValue] = React.useState("");
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data) => {
-      console.log(data.user);
       setValue(data.user.email);
       localStorage.setItem("email", data.user.email);
     });
