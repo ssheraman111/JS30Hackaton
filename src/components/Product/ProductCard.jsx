@@ -13,6 +13,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCart } from "../../Context/CartContextProvider";
+import { useAuth } from "../../Context/AuthContexProvider";
+import { ADMIN } from "../../helpers/consts";
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
 
@@ -20,6 +22,9 @@ export default function ProductCard({ item }) {
 
   const navigate = useNavigate();
   const { addProductToCart, checkProductInCard } = useCart();
+  const {
+    user: { email },
+  } = useAuth();
   return (
     <Card
       onMouseOver={() => setMouse(true)}
@@ -56,14 +61,19 @@ export default function ProductCard({ item }) {
           {item.description}
         </Typography>
       </CardContent>
-      <CardActions>
-        <IconButton onClick={() => deleteProduct(item.id)}>
-          <DeleteIcon />
-        </IconButton>
-        <IconButton onClick={() => navigate(`/edit/${item.id}`)}>
-          <EditIcon />
-        </IconButton>
-      </CardActions>
+
+      {email === ADMIN ? (
+        <CardActions>
+          <IconButton onClick={() => deleteProduct(item.id)}>
+            <DeleteIcon />
+          </IconButton>
+          <IconButton onClick={() => navigate(`/edit/${item.id}`)}>
+            <EditIcon />
+          </IconButton>
+        </CardActions>
+      ) : (
+        ""
+      )}
 
       {/* <h1 onMouseOver={setMouse("true")}>emir</h1> */}
     </Card>
