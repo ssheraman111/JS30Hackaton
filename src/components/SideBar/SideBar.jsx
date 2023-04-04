@@ -1,18 +1,14 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 
+import { TextField } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+
 import {
   FormControlLabel,
   FormLabel,
@@ -21,13 +17,21 @@ import {
   RadioGroup,
 } from "@mui/material";
 
-import ProductList from "../Product/ProductList/ProductList";
-
 import picSideBar from "../../images/SuperSaleBanner.svg";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useProducts } from "../../Context/ProductContextProvider";
 
 const drawerWidth = 240;
 
 export default function SideBar() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = React.useState(searchParams.get("q") || "");
+  const { fetchByParams, getProducts } = useProducts();
+
+  React.useEffect(() => {
+    setSearchParams({ q: search });
+    getProducts();
+  }, [search]);
   return (
     <Grid sx={{ display: "flex" }}>
       <CssBaseline />
@@ -37,6 +41,7 @@ export default function SideBar() {
           ml: `${drawerWidth}px`,
         }}
       ></AppBar>
+
       <Box
         sx={{
           width: drawerWidth,
@@ -53,6 +58,14 @@ export default function SideBar() {
         <List
           sx={{ display: "flex", flexDirection: "column", marginLeft: "13%" }}
         >
+          <TextField
+            id="standard-basic"
+            label="Search"
+            variant="standard"
+            fullWidth
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
           <FormLabel id="demo-radio-buttons-group-label">Categories</FormLabel>
 
           <RadioGroup

@@ -6,15 +6,17 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import SearchIcon from "@mui/icons-material/Search";
+
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import IconOfNavbar from "../../images/IconOfNavbar.svg";
 import LoginLogoutBtn from "../../images/LoginLogoutBtn.svg";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { ADMIN } from "../../helpers/consts";
-
-import { TextField } from "@mui/material";
+import Menu from "@mui/material/Menu";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
 import { useAuth } from "../../Context/AuthContexProvider";
 import "./Navbar.css";
 
@@ -25,19 +27,32 @@ const pages = [
 ];
 
 function Navbar() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = React.useState(searchParams.get("q") || "");
-
-  React.useEffect(() => {
-    setSearchParams({ q: search });
-  }, [search]);
-
   const navigate = useNavigate();
 
   const {
     handleLogout,
     user: { email },
   } = useAuth();
+  // ++++++++++++++++++
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  // ++++++++++++++++++
 
   return (
     <AppBar className="Nav__container" position="static">
@@ -84,20 +99,10 @@ function Navbar() {
             ) : null}
           </Box>
           <Box>
-            <Button size="large" aria-label="search" color="inherit">
-              <SearchIcon />
-              <TextField
-                id="standard-basic"
-                label="Search"
-                variant="standard"
-                fullWidth
-                onChange={(e) => setSearch(e.target.value)}
-                value={search}
-              />
-            </Button>
             <IconButton onClick={() => navigate("/cart")}>
               <ShoppingCartIcon />
             </IconButton>
+
             {email ? (
               <Button
                 className="logBtn"
@@ -120,7 +125,37 @@ function Navbar() {
               </Button>
             )}
           </Box>
-          <p>{email}</p>
+          {email ? (
+            <Box sx={{ flexGrow: 0, marginLeft: "23px" }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{email}</Typography>
+                </MenuItem>
+              </Menu>
+            </Box>
+          ) : (
+            ""
+          )}
         </Toolbar>
       </Container>
     </AppBar>
