@@ -26,7 +26,6 @@ export default function ProductCard({ item }) {
     user: { email },
   } = useAuth();
   return (
-
     <div className="card__container">
       <Card
         onMouseOver={() => setMouse(true)}

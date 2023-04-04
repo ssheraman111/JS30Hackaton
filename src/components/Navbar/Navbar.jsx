@@ -157,7 +157,6 @@ function Navbar() {
           ) : (
             ""
           )}
-
         </Toolbar>
       </Container>
     </AppBar>

@@ -72,7 +72,6 @@ export default function Carousel() {
             <img className="firstImg" src={littleFlower} alt="" />
             <img className="secondImg" src={Flower} alt="" />
           </Box>
-
         </SwiperSlide>
         <SwiperSlide className="slider">
           <Box className="slideLeftSide">
