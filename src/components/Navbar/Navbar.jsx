@@ -16,6 +16,7 @@ import { ADMIN } from "../../helpers/consts";
 
 import { TextField } from "@mui/material";
 import { useAuth } from "../../Context/AuthContexProvider";
+import "./Navbar.css";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -39,7 +40,7 @@ function Navbar() {
   } = useAuth();
 
   return (
-    <AppBar position="static">
+    <AppBar className="Nav__container" position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src={IconOfNavbar} alt="Error" />
@@ -57,21 +58,26 @@ function Navbar() {
               color: "inherit",
               textDecoration: "none",
             }}
+            className="title__nav"
           >
             GREENSHOP
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, index) => (
-              <Link key={index} to={page.link}>
-                <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Link className="linkNav" key={index} to={page.link}>
+                <Button
+                  className="pages__btn_nav"
+                  sx={{ my: 2, color: "black", display: "block" }}
+                >
                   {page.name}
                 </Button>
               </Link>
             ))}
             {email === ADMIN ? (
               <Button
+                className="admin__btn_nav"
                 onClick={() => navigate("/admin")}
-                sx={{ my: 2, display: "block", color: "white" }}
+                sx={{ my: 2, display: "block", color: "black" }}
               >
                 <Typography id="pages_link">Admin page</Typography>
               </Button>
@@ -94,6 +100,7 @@ function Navbar() {
             </IconButton>
             {email ? (
               <Button
+                className="logBtn"
                 variant="contained"
                 onClick={handleLogout}
                 sx={{ my: 2, color: "white" }}
@@ -103,6 +110,7 @@ function Navbar() {
               </Button>
             ) : (
               <Button
+                className="logBtn"
                 variant="contained"
                 onClick={() => navigate("/auth")}
                 sx={{ my: 2, color: "white" }}
@@ -111,8 +119,8 @@ function Navbar() {
                 Login
               </Button>
             )}
-            <h1>{email}</h1>
           </Box>
+          <p>{email}</p>
         </Toolbar>
       </Container>
     </AppBar>

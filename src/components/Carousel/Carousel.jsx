@@ -26,66 +26,72 @@ export default function Carousel() {
         }}
         modules={[Pagination]}
         className="mySwiper"
+        style={{ backgroundColor: "#46A358", height: "40rem" }}
       >
-        <SwiperSlide>
-          <Box>
-            <p>Welcome to GreenShop</p>
-            <h1>
-              Let’s Make a Better <span>Planet</span>
+        <SwiperSlide className="slider">
+          <Box className="slideLeftSide">
+            <p className="slidePar">Welcome to GreenShop</p>
+            <h1 className="sideh1">
+              Let’s Make a Better <span className="slideh1span">Planet</span>
             </h1>
-            <p>
+            <p className="slideSecondPar">
               We are an online plant shop offering a wide range of cheap and
               trendy plants. Use our plants to create an unique Urban Jungle.
               Order your favorite plants!
             </p>
             <div>
-              <Button variant="contained">SHOP NOW</Button>
+              <Button className="slideBtnShop" variant="contained">
+                SHOP NOW
+              </Button>
             </div>
           </Box>
-          <Box>
-            <img src={littleFlower} alt="" />
-            <img src={Flower} alt="" />
+          <Box className="slideBoxOfImg">
+            <img className="firstImg" src={littleFlower} alt="" />
+            <img className="secondImg" src={Flower} alt="" />
           </Box>
         </SwiperSlide>
-        <SwiperSlide>
-          <Box>
-            <p>Welcome to GreenShop</p>
-            <h1>
-              Let’s Make a Better <span>Planet</span>
+        <SwiperSlide className="slider">
+          <Box className="slideLeftSide">
+            <p className="slidePar">Welcome to GreenShop</p>
+            <h1 className="sideh1">
+              Let’s Make a Better <span className="slideh1span">Planet</span>
             </h1>
-            <p>
+            <p className="slideSecondPar">
               We are an online plant shop offering a wide range of cheap and
               trendy plants. Use our plants to create an unique Urban Jungle.
               Order your favorite plants!
             </p>
             <div>
-              <Button variant="contained">SHOP NOW</Button>
+              <Button className="slideBtnShop" variant="contained">
+                SHOP NOW
+              </Button>
             </div>
           </Box>
-          <Box>
-            <img src={littleFlower} alt="" />
-            <img src={Flower} alt="" />
+          <Box className="slideBoxOfImg">
+            <img className="firstImg" src={littleFlower} alt="" />
+            <img className="secondImg" src={Flower} alt="" />
           </Box>
         </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <Box>
-            <p>Welcome to GreenShop</p>
-            <h1>
-              Let’s Make a Better <span>Planet</span>
+        <SwiperSlide className="slider">
+          <Box className="slideLeftSide">
+            <p className="slidePar">Welcome to GreenShop</p>
+            <h1 className="sideh1">
+              Let’s Make a Better <span className="slideh1span">Planet</span>
             </h1>
-            <p>
+            <p className="slideSecondPar">
               We are an online plant shop offering a wide range of cheap and
               trendy plants. Use our plants to create an unique Urban Jungle.
               Order your favorite plants!
             </p>
             <div>
-              <Button variant="contained">SHOP NOW</Button>
+              <Button className="slideBtnShop" variant="contained">
+                SHOP NOW
+              </Button>
             </div>
           </Box>
-          <Box>
-            <img src={littleFlower} alt="" />
-            <img src={Flower} alt="" />
+          <Box className="slideBoxOfImg">
+            <img className="firstImg" src={littleFlower} alt="" />
+            <img className="secondImg" src={Flower} alt="" />
           </Box>
         </SwiperSlide>
       </Swiper>
