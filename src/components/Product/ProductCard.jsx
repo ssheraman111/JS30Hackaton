@@ -87,20 +87,25 @@ export default function ProductCard({ item }) {
             {item.description}
           </Typography>
         </CardContent>
-        <CardActions className="card__action">
-          <IconButton
-            className="btn__delete"
-            onClick={() => deleteProduct(item.id)}
-          >
-            <DeleteIcon />
-          </IconButton>
-          <IconButton
-            className="btn__edit"
-            onClick={() => navigate(`/edit/${item.id}`)}
-          >
-            <EditIcon />
-          </IconButton>
-        </CardActions>
+
+        {email === ADMIN ? (
+          <CardActions className="card__action">
+            <IconButton
+              className="btn__delete"
+              onClick={() => deleteProduct(item.id)}
+            >
+              <DeleteIcon />
+            </IconButton>
+            <IconButton
+              className="btn__edit"
+              onClick={() => navigate(`/edit/${item.id}`)}
+            >
+              <EditIcon />
+            </IconButton>
+          </CardActions>
+        ) : (
+          ""
+        )}
       </Card>
     </div>
   );

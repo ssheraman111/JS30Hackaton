@@ -94,6 +94,17 @@ const AddProduct = () => {
           onChange={handleInp}
           value={product.description || ""}
         />
+        <TextField
+          sx={{ width: "60%" }}
+          className="admin_inp"
+          id="outlined-basic"
+          label="Categories"
+          variant="outlined"
+          name="categories"
+          size="small"
+          onChange={handleInp}
+          value={product.categories || ""}
+        />
 
         <Button
           onClick={() => {
