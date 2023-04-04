@@ -27,17 +27,17 @@ export default function ProductCard({ item }) {
   } = useAuth();
   return (
     <div className="card__container">
-      <Card
+      <div
         onMouseOver={() => setMouse(true)}
         onMouseOut={() => setMouse(false)}
-        sx={{ maxWidth: 345 }}
       >
-        <CardMedia
-          className="madia__card"
-          sx={{ height: 140 }}
-          image={item.picture}
-          title="green iguana"
-        >
+        <div className="madia__card">
+          <img
+            style={{ width: "100px" }}
+            className="madia__card_img"
+            src={item.picture}
+            alt=""
+          />
           {mouse ? (
             <>
               <IconButton className="btn__favorite">
@@ -61,7 +61,7 @@ export default function ProductCard({ item }) {
           ) : (
             ""
           )}
-        </CardMedia>
+        </div>
         <CardContent className="card__content">
           <Typography
             className="content__name"
@@ -101,7 +101,7 @@ export default function ProductCard({ item }) {
             <EditIcon />
           </IconButton>
         </CardActions>
-      </Card>
+      </div>
     </div>
   );
 }
