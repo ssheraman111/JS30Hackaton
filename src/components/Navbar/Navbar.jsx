@@ -26,6 +26,7 @@ import { Search } from "@mui/icons-material";
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Plant Care", link: "/plantcare", id: 2 },
+  { name: "Add credit card", link: "/bancCard", id: 3 },
   { name: "", link: "/*", id: 4 },
 ];
 
