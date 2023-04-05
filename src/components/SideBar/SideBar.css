@@ -144,3 +144,9 @@
     display: block !important;
   }
 }
+
+@media all and (max-width: 1293px) {
+  .sidebar_main_container {
+    display: none !important;
+  }
+}

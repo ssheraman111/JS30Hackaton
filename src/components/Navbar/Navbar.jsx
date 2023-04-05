@@ -28,7 +28,8 @@ const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Videos about Us", link: "/video", id: 2 },
 
-  { name: "Add credit card", link: "/bancCard", id: 4 },
+  { name: "Add credit card", link: "/bancCard", id: 3 },
+  { name: "", link: "/*", id: 4 },
 ];
 
 function Navbar() {

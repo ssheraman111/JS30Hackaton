@@ -47,7 +47,7 @@ export default function SideBar() {
   }, [search]);
   // search
   return (
-    <Grid>
+    <Grid className="sidebar_main_container">
       <Box className="sidebar__container">
         <Input
           placeholder="Search…"
