@@ -4,12 +4,11 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
 import CssBaseline from "@mui/material/CssBaseline";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 
 import { Button, TextField, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
+import "./SideBar.css";
 
 import {
   FormControlLabel,
@@ -20,7 +19,7 @@ import {
 } from "@mui/material";
 
 import picSideBar from "../../images/SuperSaleBanner.svg";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../Context/ProductContextProvider";
 
 const drawerWidth = 240;
@@ -29,14 +28,7 @@ function valuetext(value) {
 }
 
 export default function SideBar() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = React.useState(searchParams.get("q") || "");
   const { fetchByParams, getProducts } = useProducts();
-
-  React.useEffect(() => {
-    setSearchParams({ q: search });
-    getProducts();
-  }, [search]);
 
   // slider
   const [value, setValue] = React.useState([20, 37]);
@@ -46,40 +38,15 @@ export default function SideBar() {
   };
   // slider
   return (
-    <Grid sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar
-        sx={{
-          width: `calc(100% - ${drawerWidth}px)`,
-          ml: `${drawerWidth}px`,
-        }}
-      ></AppBar>
-
-      <Box
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-        variant="permanent"
-      >
-        <Toolbar />
-        <Divider />
-        <List
-          sx={{ display: "flex", flexDirection: "column", marginLeft: "13%" }}
-        >
-          <TextField
-            id="standard-basic"
-            label="Search"
-            variant="standard"
-            fullWidth
-            onChange={(e) => setSearch(e.target.value)}
-            value={search}
-          />
-          <FormLabel id="demo-radio-buttons-group-label">Categories</FormLabel>
+    <Grid>
+      <Box className="sidebar__container">
+        <List className="sidebar-first-part">
+          <FormLabel
+            className="sidebar-first__title"
+            id="demo-radio-buttons-group-label"
+          >
+            Categories
+          </FormLabel>
 
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
@@ -87,44 +54,62 @@ export default function SideBar() {
             name="radio-buttons-group"
             onChange={(e) => fetchByParams("categories", e.target.value)}
           >
-            <FormControlLabel value="All" control={<Radio />} label="All" />
             <FormControlLabel
+              className="categorie__all"
+              value="All"
+              control={<Radio />}
+              label="All"
+            />
+            <FormControlLabel
+              className="categories__hose-plants"
               value="House Plants"
               control={<Radio />}
               label="House Plants"
             />
             <FormControlLabel
+              className="categories__potter-plants"
               value="Potter Plants"
               control={<Radio />}
               label="Potter Plants"
             />
-            <FormControlLabel value="Seeds" control={<Radio />} label="Seeds" />
             <FormControlLabel
+              className="categories__seeds"
+              value="Seeds"
+              control={<Radio />}
+              label="Seeds"
+            />
+            <FormControlLabel
+              className="categories__small-plants"
               value="Small Plants"
               control={<Radio />}
               label="Small Plants"
             />
             <FormControlLabel
+              className="categories__big-plants"
               value="Big Plants"
               control={<Radio />}
               label="Big Plants"
             />
             <FormControlLabel
+              className="categories__succulents"
               value="Succulents"
               control={<Radio />}
               label="Succulents"
             />
             <FormControlLabel
+              className="categories__terrariums"
               value="Terrariums"
               control={<Radio />}
               label="Terrariums"
             />
             <FormControlLabel
+              className="categories__gardening"
               value="Gardening"
               control={<Radio />}
               label="Gardening"
             />
             <FormControlLabel
+              className="categories__accessories"
               value="Accessories"
               control={<Radio />}
               label="Accessories"
@@ -132,22 +117,37 @@ export default function SideBar() {
           </RadioGroup>
         </List>
         <Divider />
-        <List
-          sx={{ display: "flex", flexDirection: "column", marginLeft: "13%" }}
-        >
-          <FormLabel id="demo-radio-buttons-group-label">Size</FormLabel>
+        <List className="sidebar-second-part">
+          <FormLabel
+            className="sidbar-second-part__title"
+            id="demo-radio-buttons-group-label"
+          >
+            Size
+          </FormLabel>
           <RadioGroup
+            className="categories__all"
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"
           >
-            <FormControlLabel value="Small" control={<Radio />} label="Small" />
             <FormControlLabel
+              className="categories__small"
+              value="Small"
+              control={<Radio />}
+              label="Small"
+            />
+            <FormControlLabel
+              className="categories__medium"
               value="Medium"
               control={<Radio />}
               label="Medium"
             />
-            <FormControlLabel value="Large" control={<Radio />} label="Large" />
+            <FormControlLabel
+              className="categories__large"
+              value="Large"
+              control={<Radio />}
+              label="Large"
+            />
           </RadioGroup>
         </List>
 
@@ -172,12 +172,8 @@ export default function SideBar() {
           </Box>
         </List>
         {/* Slider */}
-        {/* <img src={picSideBar} /> */}
+        <img src={picSideBar} />
       </Box>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
-      ></Box>
     </Grid>
   );
 }
