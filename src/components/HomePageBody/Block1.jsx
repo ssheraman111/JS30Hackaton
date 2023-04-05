@@ -11,7 +11,7 @@ import { IconButton } from "@mui/material";
 
 export default function Block1() {
   return (
-    <>
+    <div>
       <h1 style={{ display: "flex", justifyContent: "center" }} variant="h5">
         Our Blog Posts
       </h1>
@@ -168,6 +168,6 @@ export default function Block1() {
           </CardActions>
         </Card>
       </Box>
-    </>
+    </div>
   );
 }
