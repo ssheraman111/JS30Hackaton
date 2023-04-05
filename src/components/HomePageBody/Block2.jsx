@@ -42,7 +42,10 @@ const Block2 = () => {
             We are an online plant shop offering a wide range of cheap and
             trendy plants
           </Typography>
-          <IconButton onClick={() => navigate("/detils")} className="Block2Btn">
+          <IconButton
+            onClick={() => navigate("/details/:id")}
+            className="Block2Btn"
+          >
             Finde More
             <EastIcon />
           </IconButton>

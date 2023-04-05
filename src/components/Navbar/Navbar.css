@@ -1,11 +1,11 @@
 .Nav__container {
   background-color: transparent !important;
   color: black !important;
-  width: 90%;
-  margin: auto;
-  box-shadow: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.357);
-  padding-bottom: 0;
+  width: 90% !important;
+  margin: auto !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.357) !important;
+  padding-bottom: 0 !important;
 }
 
 .title__nav {
@@ -17,6 +17,7 @@
 
 .pages__btn_nav {
   text-decoration: none !important;
+  margin-left: 2rem !important;
 }
 .pages__btn_nav:hover {
   font-weight: 700 !important;
@@ -42,4 +43,13 @@
 .logBtn {
   background-color: #46a358 !important;
   font-weight: 900 !important;
+  margin-right: 2rem !important;
+}
+
+.searchNav {
+  margin-right: 2rem !important;
+}
+
+.cartNav {
+  margin-right: 2rem !important;
 }
