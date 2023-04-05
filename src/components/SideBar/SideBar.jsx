@@ -1,8 +1,12 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+
+import Slider from "@mui/material/Slider";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import List from "@mui/material/List";
-import { TextField } from "@mui/material";
+
+import { Button, TextField, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import "./SideBar.css";
 
@@ -19,10 +23,20 @@ import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../Context/ProductContextProvider";
 
 const drawerWidth = 240;
+function valuetext(value) {
+  return `${value}°C`;
+}
 
 export default function SideBar() {
   const { fetchByParams, getProducts } = useProducts();
 
+  // slider
+  const [value, setValue] = React.useState([20, 37]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  // slider
   return (
     <Grid>
       <Box className="sidebar__container">
@@ -136,7 +150,29 @@ export default function SideBar() {
             />
           </RadioGroup>
         </List>
-        <img className="add__img" src={picSideBar} />
+
+        {/* Slider */}
+        <List>
+          <FormLabel id="demo-radio-buttons-group-label">Price Range</FormLabel>
+          <Box sx={{ width: 200 }}>
+            <Slider
+              max={2000}
+              min={100}
+              getAriaLabel={() => "Temperature range"}
+              value={value}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+              getAriaValueText={valuetext}
+            />
+
+            <Typography>
+              Price: {value[0]}$ - {value[1]}$
+            </Typography>
+            <Button variant="text">Text</Button>
+          </Box>
+        </List>
+        {/* Slider */}
+        <img src={picSideBar} />
       </Box>
     </Grid>
   );
