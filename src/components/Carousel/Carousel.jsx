@@ -26,7 +26,7 @@ export default function Carousel() {
         }}
         modules={[Pagination]}
         className="mySwiper"
-        style={{ backgroundColor: "#46A358", height: "40rem" }}
+        style={{ height: "40rem" }}
       >
         <SwiperSlide className="slider">
           <Box className="slideLeftSide">

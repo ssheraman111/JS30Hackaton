@@ -8,28 +8,21 @@ import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import EastIcon from "@mui/icons-material/East";
 import { IconButton } from "@mui/material";
-
+import "./Block1.css";
 export default function Block1() {
   return (
-    <div>
+    <div className="headerof-block1">
       <h1 style={{ display: "flex", justifyContent: "center" }} variant="h5">
         Our Blog Posts
       </h1>
-      <Typography
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginBottom: "6%",
-        }}
-        color="gray"
-      >
+      <Typography className="second-porsgraph" color="gray">
         We are an online plant shop offering a wide range of cheap and trendy
         plants.
       </Typography>
       <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
         <Card
           sx={{
-            maxWidth: 320,
+            maxWidth: 300,
             backgroundColor: "#FBFBFB",
             boxShadow: "none ",
           }}
@@ -64,7 +57,7 @@ export default function Block1() {
         </Card>
         <Card
           sx={{
-            maxWidth: 320,
+            maxWidth: 300,
             backgroundColor: "#FBFBFB",
             boxShadow: "none",
           }}
@@ -99,7 +92,7 @@ export default function Block1() {
         </Card>
         <Card
           sx={{
-            maxWidth: 320,
+            maxWidth: 300,
             backgroundColor: "#FBFBFB",
             boxShadow: "none",
           }}
@@ -117,7 +110,7 @@ export default function Block1() {
               September 12 I Read in 6 minutes
             </Typography>
             <Typography gutterBottom variant="h5" component="div">
-              Cacti & Succulent Care Tips
+              Cacti & Succulent Care Tips lkjkjjkl
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Cacti and succulents thrive in containers and because most are..
@@ -134,7 +127,7 @@ export default function Block1() {
         </Card>
         <Card
           sx={{
-            maxWidth: 320,
+            maxWidth: 300,
             backgroundColor: "#FBFBFB",
             boxShadow: "none",
           }}

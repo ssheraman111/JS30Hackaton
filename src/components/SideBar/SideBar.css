@@ -1,68 +1,137 @@
 .sidebar__container {
-  width: 30% !important;
+  width: 35% !important;
   margin-top: 8rem !important;
   padding-left: 3rem !important;
-}
-
-.sidebar-first-part {
-}
-
-.sidebar__inp {
+  margin-left: 2rem !important;
 }
 
 .sidebar-first__title {
   font-size: 18px !important;
   color: black !important;
-  font-weight: 600 !important;
+  font-weight: 800 !important;
+}
+
+.radioGroup {
+  margin-top: 2rem !important   ;
+  margin-bottom: 2rem !important;
 }
 
 .categorie__all {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__hose-plants {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__potter-plants {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__seeds {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__small-plants {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__big-plants {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__succulents {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__terrariums {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__gardening {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__accessories {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .sidebar-second-part {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .sidbar-second-part__title {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: black !important;
 }
 
 .categories__all {
+  margin-top: 1rem !important;
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__small {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__medium {
+  color: #46a358 !important;
+  margin-top: 1rem !important;
 }
 
 .categories__large {
+  margin-top: 1rem !important;
+
+  color: #46a358 !important;
+}
+
+.slider {
+  width: 100% !important;
+}
+
+.slider__title {
+  font-size: 18px !important;
+  color: black !important;
+  font-weight: 800 !important;
+}
+
+.slider-oun {
+  width: 130% !important;
+}
+
+.slider__price {
+  margin-top: 1rem !important;
+}
+
+.slider__span {
+  color: #46a358 !important;
+  margin-left: 10px !important;
+  font-weight: 600 !important;
+}
+
+.slider__btn {
+  background-color: #46a358 !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  padding: 5px 20px 5px 20px !important;
+  margin-top: 2rem !important;
 }
 
 .add__img {
+  width: 300px !important;
 }

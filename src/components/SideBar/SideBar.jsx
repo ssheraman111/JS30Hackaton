@@ -49,6 +49,7 @@ export default function SideBar() {
           </FormLabel>
 
           <RadioGroup
+            className="radioGroup"
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"
@@ -116,7 +117,39 @@ export default function SideBar() {
             />
           </RadioGroup>
         </List>
-        <Divider />
+
+        {/* Slider */}
+        <List className="slider">
+          <FormLabel
+            className="slider__title"
+            id="demo-radio-buttons-group-label"
+          >
+            Price Range
+          </FormLabel>
+          <Box className="slider_box">
+            <Slider
+              className="slider-oun"
+              max={2000}
+              min={100}
+              getAriaLabel={() => "Temperature range"}
+              value={value}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+              getAriaValueText={valuetext}
+            />
+
+            <Typography className="slider__price">
+              Price:
+              <span className="slider__span">
+                {value[0]}$ - {value[1]}$
+              </span>
+            </Typography>
+            <Button className="slider__btn" variant="text">
+              Filter
+            </Button>
+          </Box>
+        </List>
+        {/* Slider */}
         <List className="sidebar-second-part">
           <FormLabel
             className="sidbar-second-part__title"
@@ -151,28 +184,7 @@ export default function SideBar() {
           </RadioGroup>
         </List>
 
-        {/* Slider */}
-        <List>
-          <FormLabel id="demo-radio-buttons-group-label">Price Range</FormLabel>
-          <Box sx={{ width: 200 }}>
-            <Slider
-              max={2000}
-              min={100}
-              getAriaLabel={() => "Temperature range"}
-              value={value}
-              onChange={handleChange}
-              valueLabelDisplay="auto"
-              getAriaValueText={valuetext}
-            />
-
-            <Typography>
-              Price: {value[0]}$ - {value[1]}$
-            </Typography>
-            <Button variant="text">Text</Button>
-          </Box>
-        </List>
-        {/* Slider */}
-        <img src={picSideBar} />
+        <img className="add__img" src={picSideBar} />
       </Box>
     </Grid>
   );
