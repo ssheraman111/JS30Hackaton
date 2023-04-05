@@ -19,8 +19,12 @@ export default function Block1() {
         We are an online plant shop offering a wide range of cheap and trendy
         plants.
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+      <Box
+        className="block2__container"
+        sx={{ display: "flex", justifyContent: "space-evenly" }}
+      >
         <Card
+          className="block2__item-card"
           sx={{
             maxWidth: 300,
             backgroundColor: "#FBFBFB",
@@ -28,6 +32,7 @@ export default function Block1() {
           }}
         >
           <CardMedia
+            className="imgOfBlock2"
             sx={{ height: 195 }}
             image="https://i.pinimg.com/564x/cf/d5/9b/cfd59b04fc3763d23798e89089efb2bf.jpg"
             title="green iguana"
@@ -56,6 +61,7 @@ export default function Block1() {
           </Box>
         </Card>
         <Card
+          className="block2__item-card"
           sx={{
             maxWidth: 300,
             backgroundColor: "#FBFBFB",
@@ -63,6 +69,7 @@ export default function Block1() {
           }}
         >
           <CardMedia
+            className="imgOfBlock2"
             sx={{ height: 195 }}
             image="https://i.pinimg.com/564x/54/a5/4f/54a54f5f6a529436062f5b8e1cfb0942.jpg"
             title="green iguana"
@@ -91,6 +98,7 @@ export default function Block1() {
           </CardActions>
         </Card>
         <Card
+          className="block2__item-card"
           sx={{
             maxWidth: 300,
             backgroundColor: "#FBFBFB",
@@ -98,6 +106,7 @@ export default function Block1() {
           }}
         >
           <CardMedia
+            className="imgOfBlock2"
             sx={{ height: 195 }}
             image="https://i.pinimg.com/564x/96/d9/eb/96d9ebb0f4b311ae4e200afaa095e87b.jpg"
             title="green iguana"
@@ -126,6 +135,7 @@ export default function Block1() {
           </CardActions>
         </Card>
         <Card
+          className="block2__item-card"
           sx={{
             maxWidth: 300,
             backgroundColor: "#FBFBFB",
@@ -133,6 +143,7 @@ export default function Block1() {
           }}
         >
           <CardMedia
+            className="imgOfBlock2"
             sx={{ height: 195 }}
             image="https://i.pinimg.com/564x/8d/d3/cb/8dd3cbca19459edd5913236cb2ec5061.jpg"
             title="green iguana"
