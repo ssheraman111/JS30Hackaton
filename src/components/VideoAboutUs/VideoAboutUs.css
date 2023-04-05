@@ -1,0 +1,23 @@
+.video1 {
+  margin-left: 5% !important;
+  width: 90% !important;
+}
+.video-stream {
+  width: 100% !important;
+  height: 450px;
+  left: 0px !important;
+  top: 0px;
+}
+.video-stream .html5-main-video {
+  width: 100% !important;
+  height: 450px;
+  left: 0px !important;
+  top: 0px;
+}
+
+.html5-video-container > video {
+  width: 100% !important;
+  height: 450px;
+  left: 0px !important;
+  top: 0px;
+}
