@@ -6,7 +6,7 @@ import Slider from "@mui/material/Slider";
 import CssBaseline from "@mui/material/CssBaseline";
 import List from "@mui/material/List";
 
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, Input, TextField, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import "./SideBar.css";
 
@@ -37,9 +37,25 @@ export default function SideBar() {
     setValue(newValue);
   };
   // slider
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = React.useState(searchParams.get("q") || "");
+
+  React.useEffect(() => {
+    setSearchParams({ q: search });
+    getProducts();
+  }, [search]);
+  // search
   return (
     <Grid>
       <Box className="sidebar__container">
+        <Input
+          placeholder="Search…"
+          inputProps={{ "aria-label": "search" }}
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          className="searchNavOf-Sidebar"
+        />
         <List className="sidebar-first-part">
           <FormLabel
             className="sidebar-first__title"

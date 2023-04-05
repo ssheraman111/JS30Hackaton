@@ -1,0 +1,12 @@
+.burgerMenu {
+  display: none !important;
+}
+
+@media all and (max-width: 1150px) {
+  .burgerMenu {
+    display: block !important;
+  }
+  .LogOutLogIN {
+    display: block !important;
+  }
+}

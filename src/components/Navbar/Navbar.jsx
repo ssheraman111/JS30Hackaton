@@ -22,13 +22,13 @@ import "./Navbar.css";
 import { useProducts } from "../../Context/ProductContextProvider";
 import { Input, TextField } from "@mui/material";
 import { Search } from "@mui/icons-material";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Videos about Us", link: "/video", id: 2 },
-  { name: "Plant Care", link: "/plantcare", id: 3 },
+
   { name: "Add credit card", link: "/bancCard", id: 4 },
-  { name: "", link: "/*", id: 5 },
 ];
 
 function Navbar() {
@@ -73,7 +73,7 @@ function Navbar() {
   return (
     <AppBar className="Nav__container" position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters className="block-of-icons-in-navabr">
           <img src={IconOfNavbar} alt="Error" />
           <Typography
             variant="h6"
@@ -82,7 +82,7 @@ function Navbar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
+              display: { md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -93,6 +93,7 @@ function Navbar() {
           >
             GREENSHOP
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, index) => (
               <Link className="linkNav" key={index} to={page.link}>
@@ -115,7 +116,7 @@ function Navbar() {
             ) : null}
           </Box>
 
-          <Box>
+          <Box className="main-right-icons">
             <Input
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
@@ -151,7 +152,10 @@ function Navbar() {
           </Box>
 
           {email ? (
-            <Box sx={{ flexGrow: 0, marginLeft: "23px" }}>
+            <Box
+              className="accounAvatar"
+              sx={{ flexGrow: 0, marginLeft: "23px" }}
+            >
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar src="/static/images/avatar/2.jpg" />
@@ -181,6 +185,8 @@ function Navbar() {
           ) : (
             ""
           )}
+
+          <BurgerMenu />
         </Toolbar>
       </Container>
     </AppBar>
