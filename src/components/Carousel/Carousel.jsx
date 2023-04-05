@@ -45,8 +45,8 @@ export default function Carousel() {
             </div>
           </Box>
           <Box className="slideBoxOfImg">
-            <img className="firstImg" src={littleFlower} alt="" />
-            <img className="secondImg" src={Flower} alt="" />
+            <img className="firstImg" id="firstImg" src={littleFlower} alt="" />
+            <img className="secondImg" id="secondImg" src={Flower} alt="" />
           </Box>
         </SwiperSlide>
 
@@ -68,8 +68,8 @@ export default function Carousel() {
             </div>
           </Box>
           <Box className="slideBoxOfImg">
-            <img className="firstImg" src={littleFlower} alt="" />
-            <img className="secondImg" src={Flower} alt="" />
+            <img className="firstImg" id="firstImg" src={littleFlower} alt="" />
+            <img className="secondImg" id="secondImg" src={Flower} alt="" />
           </Box>
         </SwiperSlide>
         <SwiperSlide className="slider">
@@ -90,8 +90,8 @@ export default function Carousel() {
             </div>
           </Box>
           <Box className="slideBoxOfImg">
-            <img className="firstImg" src={littleFlower} alt="" />
-            <img className="secondImg" src={Flower} alt="" />
+            <img className="firstImg" id="firstImg" src={littleFlower} alt="" />
+            <img className="secondImg" id="secondImg" src={Flower} alt="" />
           </Box>
         </SwiperSlide>
       </Swiper>
