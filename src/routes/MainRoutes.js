@@ -10,6 +10,7 @@ import Auth from "../components/Auth/Auth";
 import { useAuth } from "../Context/AuthContexProvider";
 import { ADMIN } from "../helpers/consts";
 import Cart from "../components/Cart/Cart";
+import VideoAboutUs from "../components/VideoAboutUs/VideoAboutUs";
 import BankCard from "../components/BankCard/BankCard";
 import AddedCard from "../components/BankCard/AddedCard";
 
@@ -22,14 +23,16 @@ const MainRoutes = () => {
     { link: "*", element: <NotFoundPage />, id: 3 },
     { link: "/details/:id", element: <DetailsPage />, id: 4 },
     { link: "/cart", element: <Cart />, id: 5 },
+    { link: "/video", element: <VideoAboutUs />, id: 6 },
     { link: "/bancCard", element: <BankCard />, id: 6 },
     { link: "/youreCard", element: <AddedCard />, id: 7 },
   ];
 
   const PRIVATE_ROUTES = [
-    { link: "/admin", element: <AdminPage />, id: 8 },
-    { link: "/edit/:id", element: <EditPage />, id: 9 },
+    { link: "/admin", element: <AdminPage />, id: 7 },
+    { link: "/edit/:id", element: <EditPage />, id: 8 },
   ];
+
   return (
     <Routes>
       {PUBLIC_ROUTES.map((item) => (

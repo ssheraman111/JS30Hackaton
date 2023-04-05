@@ -1,8 +1,26 @@
-import { Box, Button, InputBase, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useProducts } from "../../Context/ProductContextProvider";
 import "./AddProduct.css";
-import { Input } from "@mui/material";
+
+import { Box, Button, Input, TextField } from "@mui/material";
+const currencies = [
+  {
+    value: "Small",
+    label: "Small",
+  },
+  {
+    value: "Medium",
+    label: "Medium",
+  },
+  {
+    value: "Large",
+    label: "Large",
+  },
+  {
+    value: "default",
+    label: "",
+  },
+];
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -85,6 +103,26 @@ const AddProduct = () => {
             name="categories"
             placeholder="categoties"
           />
+          <TextField
+            className="sizeButton"
+            sx={{ width: "60%" }}
+            id="filled-select-currency-native"
+            select
+            name="size"
+            defaultValue="default"
+            SelectProps={{
+              native: true,
+            }}
+            helperText="Please select size"
+            variant="filled"
+          >
+            {currencies.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </TextField>
+
           <Button
             className="adminPageBtn"
             onClick={() => {

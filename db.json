@@ -1,12 +1,13 @@
 {
   "product": [
     {
-      "name": "Leaves",
+      "name": "leaves",
       "description": "sfdgsfdgs",
       "price": 345,
       "picture": "https://i.pinimg.com/564x/5b/bf/77/5bbf772ee02e2f533b1ea1e64b7d9fae.jpg",
       "id": 6,
-      "categories": "House Plants"
+      "categories": "House Plants",
+      "size": "Small"
     },
     {
       "name": "Plants",
@@ -14,7 +15,8 @@
       "price": 3245,
       "picture": "https://i.pinimg.com/564x/c1/47/2c/c1472c47fed23cdadcba9146720e05b5.jpg",
       "id": 10,
-      "categories": "Potter Plants"
+      "categories": "Potter Plants",
+      "size": "Medium"
     },
     {
       "name": "Begonia",
@@ -22,7 +24,8 @@
       "price": 56,
       "picture": "https://i.pinimg.com/564x/54/a5/4f/54a54f5f6a529436062f5b8e1cfb0942.jpg",
       "id": 11,
-      "categories": "Seeds"
+      "categories": "Seeds",
+      "size": "Large"
     },
     {
       "name": "For test",
@@ -223,6 +226,13 @@
       "picture": "https://i.pinimg.com/564x/54/a5/4f/54a54f5f6a529436062f5b8e1cfb0942.jpg",
       "categories": "Flower",
       "id": 36
+    },
+    {
+      "name": "",
+      "description": "",
+      "price": 0,
+      "picture": "",
+      "id": 37
     }
   ]
 }
