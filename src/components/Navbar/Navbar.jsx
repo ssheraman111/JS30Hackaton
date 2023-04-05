@@ -19,8 +19,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useAuth } from "../../Context/AuthContexProvider";
 import "./Navbar.css";
-import { TextField } from "@mui/material";
 import { useProducts } from "../../Context/ProductContextProvider";
+import { Input, TextField } from "@mui/material";
+import { Search } from "@mui/icons-material";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -113,17 +114,17 @@ function Navbar() {
           </Box>
 
           <Box>
-            <TextField
-              className="sidebar__inp"
-              id="standard-basic"
-              label="Search"
+            <Input
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
               onChange={(e) => setSearch(e.target.value)}
               value={search}
+              className="searchNav"
             />
-            <IconButton onClick={() => navigate("/cart")}>
+
+            <IconButton className="cartNav" onClick={() => navigate("/cart")}>
               <ShoppingCartIcon />
             </IconButton>
-
             {email ? (
               <Button
                 className="logBtn"
