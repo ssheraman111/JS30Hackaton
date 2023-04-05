@@ -10,6 +10,8 @@ import Auth from "../components/Auth/Auth";
 import { useAuth } from "../Context/AuthContexProvider";
 import { ADMIN } from "../helpers/consts";
 import Cart from "../components/Cart/Cart";
+import BankCard from "../components/BankCard/BankCard";
+import AddedCard from "../components/BankCard/AddedCard";
 
 const MainRoutes = () => {
   const { user } = useAuth();
@@ -20,11 +22,13 @@ const MainRoutes = () => {
     { link: "*", element: <NotFoundPage />, id: 3 },
     { link: "/details/:id", element: <DetailsPage />, id: 4 },
     { link: "/cart", element: <Cart />, id: 5 },
+    { link: "/bancCard", element: <BankCard />, id: 6 },
+    { link: "/youreCard", element: <AddedCard />, id: 7 },
   ];
 
   const PRIVATE_ROUTES = [
-    { link: "/admin", element: <AdminPage />, id: 5 },
-    { link: "/edit/:id", element: <EditPage />, id: 6 },
+    { link: "/admin", element: <AdminPage />, id: 8 },
+    { link: "/edit/:id", element: <EditPage />, id: 9 },
   ];
   return (
     <Routes>
