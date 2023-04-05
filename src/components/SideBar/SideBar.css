@@ -5,12 +5,6 @@
   margin-left: 2rem !important;
 }
 
-.sidebar-first-part {
-}
-
-.sidebar__inp {
-}
-
 .sidebar-first__title {
   font-size: 18px !important;
   color: black !important;
@@ -106,16 +100,13 @@
 }
 
 .slider {
-  width: 130% !important;
+  width: 100% !important;
 }
 
 .slider__title {
   font-size: 18px !important;
   color: black !important;
   font-weight: 800 !important;
-}
-
-.slider_box {
 }
 
 .slider-oun {

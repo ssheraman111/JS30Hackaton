@@ -1,24 +1,48 @@
 * {
   font-family: "PT Sans", sans-serif;
 }
-.footerContainer {
-  margin: 73px 6%;
-  border: 1px solid black;
+.MainfooterContainer {
+  margin-top: 5rem !important;
 }
+
 .HeadFooter {
+  width: 85%;
+  background: #fbfbfb;
   display: flex;
-  justify-content: space-around;
-  height: 205px;
-  background-color: FBFBFB;
-  padding-bottom: 116px;
-  padding-top: 39px;
+  margin: auto;
+  margin-left: 7.5% !important;
+  height: 250px !important;
 }
+.HeadFooterColumn > p {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  width: 46%;
+  color: #727272;
+  margin-left: 7% !important;
+  margin-top: 3% !important;
+}
+.HeadFooterColumn > h2 {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 16px;
+  color: #3d3d3d;
+  margin-left: 7% !important;
+}
+
 .BodyFooter {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(227, 251, 189);
-  padding-bottom: 36px;
-  padding-top: 36px;
+  align-items: center;
+
+  background: rgba(70, 163, 88, 0.1);
+  width: 85%;
+  margin-left: 7.5% !important;
+  height: 88px;
 }
 .FootFooter {
   display: flex;
@@ -35,15 +59,62 @@
 }
 .Left2 {
   display: flex;
-  justify-content: space-around;
-  max-width: 74%;
-  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 65%;
 }
 .Right {
-  max-width: 20%;
-  font-family: "PT Sans", sans-serif;
-  text-decoration-color: 3D3D3D;
+  width: 30%;
+  margin-top: 3% !important;
+}
+.Right > h2 {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  /* identical to box height, or 89% */
+  margin-bottom: 3% !important;
+  color: #3d3d3d;
+}
+.Right > p {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  /* or 169% */
+  margin-top: 3% !important;
+  color: #727272;
+}
+.Right > input {
+  width: 73%;
+
+  height: 44px;
+  border-radius: 0px;
+  border-bottom-left-radius: 5px !important;
+  border-top-left-radius: 5px !important;
+  border: none !important;
+  background: #ffffff;
+  color: #acacac;
+}
+.footerButton {
+  border-radius: 0px 6px 6px 0px !important;
+  height: 47px;
+  background-color: #46a358 !important;
 }
 .HeadFooterColumn {
   width: 31%;
+
+  border-left: 2px solid rgba(70, 163, 88, 0.1);
+  /* border-left-width: 250px; */
+  margin-top: 3% !important;
+  height: 200px;
+}
+#HeadFooterColumn-id {
+  border: none;
+}
+.footer-img {
+  margin-left: 7% !important;
 }
