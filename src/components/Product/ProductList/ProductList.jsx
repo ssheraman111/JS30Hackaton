@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import ProductCard from "../ProductCard";
 import { useProducts } from "../../../Context/ProductContextProvider";
 import "./ProductList.css";
+import FilterListIcon from "@mui/icons-material/FilterList";
 
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+const ITEM_HEIGHT = 48;
 const ProductList = () => {
   const { getProducts, products } = useProducts();
 
@@ -34,9 +38,49 @@ const ProductList = () => {
     const end = begin + itemsPerPage;
     return products.slice(begin, end);
   };
+  // for filter
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className="containerCards">
+      {/* waerdtehjkgjfhkdgjsfgwhjfkmlkfjdhs */}
+      <div>
+        <IconButton
+          aria-label="more"
+          id="long-button"
+          aria-controls={open ? "long-menu" : undefined}
+          aria-expanded={open ? "true" : undefined}
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          <FilterListIcon />
+        </IconButton>
+        <Menu
+          id="long-menu"
+          MenuListProps={{
+            "aria-labelledby": "long-button",
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          PaperProps={{
+            style: {
+              maxHeight: ITEM_HEIGHT * 4.5,
+              width: "20ch",
+            },
+          }}
+        >
+          <MenuItem onClick={handleClose}>emir</MenuItem>
+        </Menu>
+      </div>
+      {/* waerdtehjkgjfhkdgjsfgwhjfkmlkfjdhs */}
       <div>
         <Box className="list_card">
           {currentData().map((item) => (

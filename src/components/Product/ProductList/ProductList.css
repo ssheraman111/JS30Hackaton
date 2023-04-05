@@ -9,3 +9,11 @@
 .pogination {
   margin: auto !important;
 }
+.filterforadaptive {
+  display: none !important;
+}
+@media all and (max-width: 1293px) {
+  .filterforadaptive {
+    display: block !important;
+  }
+}
