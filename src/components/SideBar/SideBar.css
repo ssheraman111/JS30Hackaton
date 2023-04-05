@@ -135,3 +135,18 @@
 .add__img {
   width: 300px !important;
 }
+.searchNavOf-Sidebar {
+  display: none !important;
+}
+/*!adaptiv  */
+@media all and (max-width: 1383px) {
+  .searchNavOf-Sidebar {
+    display: block !important;
+  }
+}
+
+@media all and (max-width: 1293px) {
+  .sidebar_main_container {
+    display: none !important;
+  }
+}

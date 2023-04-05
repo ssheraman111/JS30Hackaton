@@ -53,3 +53,34 @@
 .cartNav {
   margin-right: 2rem !important;
 }
+.admin__btn_nav {
+  margin-left: 4% !important;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media all and (max-width: 1383px) {
+  .searchNav {
+    display: none !important;
+  }
+}
+@media all and (max-width: 1150px) {
+  .linkNav {
+    display: none;
+  }
+  .admin__btn_nav {
+    display: none !important;
+  }
+  .main-right-icons {
+    display: none !important;
+  }
+  .accounAvatar {
+    display: none !important;
+  }
+}
+
+@media all and (max-width: 1150px) {
+  .block-of-icons-in-navabr {
+    display: flex;
+    justify-content: center;
+  }
+}
