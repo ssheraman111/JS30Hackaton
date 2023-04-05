@@ -44,3 +44,167 @@
   padding: 15px !important;
   height: 40px;
 }
+
+/* ====================================================== */
+@media all and (max-width: 768px) {
+  .Block2Container {
+    width: 90% !important;
+    margin-left: 3% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 5rem !important;
+  }
+
+  .Block2Item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around;
+    text-align: end !important;
+    background-color: #fbfbfb !important;
+    height: 250px !important;
+    width: 50% !important;
+  }
+
+  .BlockImg {
+    height: 292x !important;
+  }
+
+  .Block2TextBlock {
+    width: 40%;
+  }
+
+  .Block2Title {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+  }
+
+  .Block2Text {
+    font-size: 14px !important;
+
+    color: rgba(0, 0, 0, 0.485) !important;
+  }
+
+  .Block2Btn {
+    margin-top: 1rem !important;
+    background-color: #46a358 !important;
+    border-radius: 10px !important;
+    color: white !important;
+    font-size: 14px !important;
+    padding: 15px !important;
+    height: 40px;
+  }
+
+  .imgOfBlock2 {
+    height: 150px !important;
+  }
+}
+/* ================================================== */
+@media all and (max-width: 425px) {
+  .Block2Container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important  ;
+    flex-direction: column !important;
+    margin-top: 5rem !important;
+  }
+
+  .Block2Item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around;
+    text-align: end !important;
+    background-color: #fbfbfb !important;
+    height: 250px !important;
+    width: 80% !important;
+    margin: 1rem !important;
+  }
+
+  .BlockImg {
+    height: 292x !important;
+  }
+
+  .Block2TextBlock {
+    width: 40%;
+  }
+
+  .Block2Title {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+  }
+
+  .Block2Text {
+    font-size: 14px !important;
+
+    color: rgba(0, 0, 0, 0.485) !important;
+  }
+
+  .Block2Btn {
+    margin-top: 1rem !important;
+    background-color: #46a358 !important;
+    border-radius: 10px !important;
+    color: white !important;
+    font-size: 14px !important;
+    padding: 15px !important;
+    height: 40px;
+  }
+
+  .imgOfBlock2 {
+    height: 180px !important;
+  }
+}
+/* =================================== */
+@media all and (max-width: 375px) {
+  .Block2Container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important  ;
+    flex-direction: column !important;
+    margin-top: 5rem !important;
+  }
+
+  .Block2Item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around;
+    text-align: start !important;
+    background-color: #fbfbfb !important;
+    height: 250px !important;
+    width: 90% !important;
+    margin: 1rem !important;
+  }
+
+  .BlockImg {
+    height: 292x !important;
+  }
+
+  .Block2TextBlock {
+    width: 40%;
+  }
+
+  .Block2Title {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+  }
+
+  .Block2Text {
+    font-size: 14px !important;
+
+    color: rgba(0, 0, 0, 0.485) !important;
+  }
+
+  .Block2Btn {
+    margin-top: 1rem !important;
+    background-color: #46a358 !important;
+    border-radius: 10px !important;
+    color: white !important;
+    font-size: 14px !important;
+    padding: 15px !important;
+    height: 40px;
+  }
+
+  .imgOfBlock2 {
+    height: 230px !important;
+  }
+}
