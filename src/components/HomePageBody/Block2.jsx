@@ -14,7 +14,7 @@ const Block2 = () => {
     <Box className="Block2Container">
       <Box className="Block2Item">
         <Box className="BlockImg">
-          <img src={image2} />
+          <img className="imgOfBlock2" src={image2} />
         </Box>
         <Box className="Block2TextBlock">
           <Typography className="Block2Title">
@@ -32,7 +32,7 @@ const Block2 = () => {
       </Box>
       <Box className="Block2Item">
         <Box className="BlockImg">
-          <img src={image3} />
+          <img className="imgOfBlock2" src={image3} />
         </Box>
         <Box className="Block2TextBlock">
           <Typography className="Block2Title">

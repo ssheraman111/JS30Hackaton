@@ -51,7 +51,7 @@ const ProductList = () => {
   return (
     <div className="containerCards">
       {/* waerdtehjkgjfhkdgjsfgwhjfkmlkfjdhs */}
-      <div>
+      <div className="filterforadaptive">
         <IconButton
           aria-label="more"
           id="long-button"
