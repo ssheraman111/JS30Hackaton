@@ -26,7 +26,9 @@ import { Search } from "@mui/icons-material";
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Videos about Us", link: "/video", id: 2 },
-  { name: "", link: "/*", id: 4 },
+  { name: "Plant Care", link: "/plantcare", id: 3 },
+  { name: "Add credit card", link: "/bancCard", id: 4 },
+  { name: "", link: "/*", id: 5 },
 ];
 
 function Navbar() {

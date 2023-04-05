@@ -1,0 +1,29 @@
+* {
+  margin: 0 !important;
+}
+
+.bankMainContainer {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column;
+  margin-top: 5rem !important;
+}
+
+.bankCard__container {
+  width: 80% !important;
+  margin-top: 3rem !important;
+}
+
+.cardBankInp {
+  margin-left: 5rem !important;
+  width: 250% !important;
+}
+
+.bankCardBtn {
+  height: 40px !important;
+  color: white !important;
+  background-color: #46a358 !important;
+  margin-right: 3rem !important;
+  margin-top: 3rem !important;
+}
