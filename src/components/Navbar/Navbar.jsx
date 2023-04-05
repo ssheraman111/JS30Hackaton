@@ -19,6 +19,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useAuth } from "../../Context/AuthContexProvider";
 import "./Navbar.css";
+import { TextField } from "@mui/material";
+import { useProducts } from "../../Context/ProductContextProvider";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -53,6 +55,17 @@ function Navbar() {
   };
 
   // ++++++++++++++++++
+
+  // search
+  const { fetchByParams, getProducts } = useProducts();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = React.useState(searchParams.get("q") || "");
+
+  React.useEffect(() => {
+    setSearchParams({ q: search });
+    getProducts();
+  }, [search]);
+  // search
 
   return (
     <AppBar className="Nav__container" position="static">
@@ -98,7 +111,15 @@ function Navbar() {
               </Button>
             ) : null}
           </Box>
+
           <Box>
+            <TextField
+              className="sidebar__inp"
+              id="standard-basic"
+              label="Search"
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
+            />
             <IconButton onClick={() => navigate("/cart")}>
               <ShoppingCartIcon />
             </IconButton>
